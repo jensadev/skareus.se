@@ -1,0 +1,23 @@
+mixin navlink(href, title, text)
+    li.nav-item
+        a.nav-link(href=href)= text
+
+mixin subnavlink(href, title, text, year)
+    li.nav-item.pl-2
+        a.nav-link.nav-sub(href=href title=title)
+            time(datetime=year)= year
+            | 
+            = text
+
+mixin projectsection(headline, title, date)
+    section.pt-4(id=title)
+        h1.border-bottom
+            time(datetime=date)= date
+            | 
+            = headline
+        if block
+            block
+
+mixin lightboximg(no,gallery)
+    a.col-md.p-2(href='https://unsplash.it/1200/768.jpg?image=' + no, data-toggle='lightbox' data-gallery=gallery)
+        img.img-fluid.rounded(src='https://unsplash.it/600.jpg?image=' + no)

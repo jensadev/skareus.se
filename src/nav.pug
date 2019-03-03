@@ -1,0 +1,14 @@
+block nav
+    - var links = []
+    - links.push({href: 'project.html', title: 'e', text: 'Utställningar och projekt'})
+    - links.push({href: 'posters.html', title: 'e', text: 'Affischer'})
+    - links.push({href: 'books.html', title: 'e', text: 'Böcker'})
+    - links.push({href: 'cv.html', title: 'e', text: 'CV'})   
+
+    div.col-md-4.sticky-top#sidenav
+        p.lead Född 1952 i Stockholm, bosatt i Umeå. Verksam som konstnär och illustratör sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid Institutionen för estetiska ämnen, Umeå universitet.    
+        nav.navbar-custom.navbar.navbar-expand-md
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.title, link.text)

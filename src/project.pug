@@ -1,0 +1,128 @@
+extends layout
+
+block head
+    - var title = 'Utställningar och projekt'
+    title Eva Skåreus - #{title}
+
+block nav
+    - var links = []
+    - links.push({href: 'project.html', title: 'e', text: 'Utställningar och projekt'})
+    - links.push({href: 'posters.html', title: 'e', text: 'Affischer'})
+    - links.push({href: 'books.html', title: 'e', text: 'Böcker'})
+    - links.push({href: 'cv.html', title: 'e', text: 'CV'})   
+
+    - var projects = []
+    - projects.push({title: '& (och)', id: 'and2000', year: '2000'})
+    - projects.push({title: 'Fotografiateljé', id: 'photo2009', year: '2009'})
+    - projects.push({title: 'Köpmanholmens hjärta', id: 'heart2011', year: '2011'})
+    - projects.push({title: 'Påstigaren / Lokal Transit', id: 'transit2013', year: '2013'})
+    - projects.push({title: 'Fabriksträdgården', id: 'factory2015', year: '2015'})
+    - projects.push({title: 'Skisser arkivsalen', id: 'archive2017', year: '2017'})
+    - projects = projects.reverse()
+
+    div.col-md-4
+        p.lead Född 1952 i Stockholm, bosatt i Umeå. Verksam som konstnär och illustratör sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid Institutionen för estetiska ämnen, Umeå universitet.    
+        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.title, link.text)
+                        if link.href == 'project.html'
+                            ul.nav.flex-column#sidenav
+                                each project in projects
+                                    +subnavlink('#' + project.id, project.title, project.title, project.year)
+
+block content
+    main.col-md-8.main-border
+        each project in projects
+            +projectsection(project.title, project.id, project.year)
+                case project.id
+                    when 'archive2017'
+                        p.lead Under 2016/2017 har styrelsen i föreningen Köpmanholmens fabriksträdgård arbetat fram en idéskiss för fortsättning av projektet: Arkivsalen.
+                            | 
+                            | Bilden i orginalstorlek finns att hämta här, Arkivsalen.
+                        .row
+                            +lightboximg(251, project.id)
+                            +lightboximg(252, project.id)
+                    when 'factory2015'
+                        p 
+                    when 'transit2013'
+                        p En dag i juli 2013, när sommaren var som bäst och solen värmde gott, var dessa människor nere på kajen i Köpmanholmen. De var tillfälliga besökare i skärgårdsbåtarnas väntkur. Några var långvägsresenärer, från Tjeckien eller Norge, medan andra bodde nästgårds och tog tillfället i akt att ta sig ner på kajen eller åka ut i skärgården en varm sommardag.
+                        p För att kunna ta båten, till Trysunda, Strängöarna eller Ulvön, måste du som passagerare gå genom väntkuren, dvs för en kort stund vara i transit. Statistiken säger att ca 50.000 människor passerar där varje år. 50.000 i transit på Köpmanholmens kaj…
+                        p Väntkuren är inte viktigt i sig, en plats man passerar, men en plats som på ett eller annat sätt påverkar människors identitet. Den utgör en gräns att passera inom vilken man till exempel går från bilresenär till båtresenär, från stadsbo till tillfällig skärgårdsbo, från besökare till hemmahörande. Man är i transit, ska bara genom, på väg bort, någon annanstans. Väntkuren är enbart namngivet som kur på en skylt inne i byggnaden. över ingången står det ”Påstigande”. När du går in i byggnaden tillhör du alltså kategorin ”påstigande” oavsett om du tänker stiga på båten eller inte.
+                        p Tack alla påstigare som ville delta i detta konstprojekt!
+                        .row
+                            +lightboximg(251, project.id)
+                            +lightboximg(252, project.id)
+                            +lightboximg(253, project.id)
+                        .row
+                            +lightboximg(254, project.id)
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                    when 'heart2011'
+                        p.lead – en dahliarabatt i det gamla fabriksområdet
+                        p Under sommaren 2011 genomförde jag ett konstprojekt i Köpmanholmens gamla fabriksområde. Projektet var en blomsterrabatt i form av ett hjärta, bestående av 440 dahlior och 112 silverekar och några solrosor samlade i en egen rabatt.
+                        p Den 2–3 juli bjöd jag inKöpmanholmsborna att hjälpa till med planteringen. Ett 30-tal personer kom. Tre tältstolar fick sedan stå kvar (efter fikaserveringen) som en del av konstprojektet och som en inbjudan för besökare att sitta ner och titta på hjärtat. Under hela sommaren blev ”Köpmanholmens hjärta” en mötesplats för många besökare. Den 16:e oktober plockades alla blommor bort.
+                        p Tankarna bakom projektet var att uppmärksamma industriområdet genom ett platsspecifikt konstverk och därigenom skapa någon form av återupprättelse, att göra platsen synligt igen, men på ett annat sätt än tidigare. Fram till mitten av 1980-talet var området tätt bebyggt med hus och industribyggnader som tillhörde bruket. Sedan revs allt och idag är det ett ingemansland, tomt och övergivet. För gamla Köpmanholmsbor verkar området mer eller mindre som en spökby, ”där stod cisternerna och där var förmansbostaden, Konsum 1:an och huggeriet”, medan för besökaren utan historisk förankring är det en flack slätt med utsikt över fjärden. Men det är också Köpmanholmens gamla hjärta, den plats där arbetet låg och den plats som utgjorde motorn i samhällsbygget.
+                        p Projektet genomfördes med stöd från Nätterlundsstiftelsen, MIVA och Bjästa Handelsträdgård.
+                        .row
+                            +lightboximg(251, project.id)
+                            +lightboximg(252, project.id)
+                            +lightboximg(253, project.id)
+                        .row
+                            +lightboximg(254, project.id)
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                        .row
+                            +lightboximg(257, project.id)
+                            +lightboximg(258, project.id)
+                            +lightboximg(259, project.id)
+                    when 'photo2009'
+                        p Under 2009 fyllde den gamla fotografiateljén i Köpmanholmen 80 år. För att fira det bjöd jag in Holmenborna under fyra dagar i juli till en friluftsateljé i trädgården. En stol, en innerdörr och trädgårdens grönska utgjorde ateljé, som en replik av dåtida fotografiateljéers målade fondväggar av grönska och balustrader samt en obligatorisk stol framför. Inbjudan resulterade i 53 fotografier som visades på restaurangen Kajen.
+                        .row
+                            +lightboximg(251, project.id)
+                            +lightboximg(252, project.id)
+                            +lightboximg(253, project.id)
+                        .row
+                            +lightboximg(254, project.id)
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                    when 'and2000'
+                        p.lead Sommaren 2000 genomförde Kim Stenlund och jag en utställning på Norrbyskär. Kim visade smycken och textila bilder medan jag visade akvareller, digitaliserade akvareller och akvarelliserade digitaler med rosor och clownen.
+                        h2 Rosor
+                        .row
+                            +lightboximg(251, project.id)
+                            +lightboximg(252, project.id)
+                            +lightboximg(253, project.id)
+                            +lightboximg(254, project.id)
+                        .row
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                            +lightboximg(257, project.id)
+                            +lightboximg(258, project.id)
+                        .row
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                            +lightboximg(257, project.id)
+                            +lightboximg(258, project.id)
+                        .row
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                            +lightboximg(257, project.id)
+                            +lightboximg(258, project.id)
+                        .row
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                            +lightboximg(257, project.id)
+                            +lightboximg(258, project.id)
+                        h2 Clowner
+                        .row
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                            +lightboximg(257, project.id)
+                            +lightboximg(258, project.id)
+                        .row
+                            +lightboximg(255, project.id)
+                            +lightboximg(256, project.id)
+                            +lightboximg(257, project.id)
+                            +lightboximg(258, project.id)

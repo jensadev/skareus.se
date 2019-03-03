@@ -1,0 +1,68 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Nav */
+.nav-item {
+  font-size: 1.2rem;
+}
+
+.navbar-custom {
+  padding-left: 0rem;
+}
+.navbar-custom .nav-item {
+  font-size: 1.5rem;
+  padding-left: 0rem;
+}
+.navbar-custom .nav-link {
+  padding-left: 0rem;
+}
+
+.navbar-brand {
+  font-size: 2.6rem;
+  font-weight: 400;
+}
+
+.nav-sub {
+  font-size: 1.1rem;
+}
+
+#sidenav {
+  /*   .nav-link.active::after {
+          font-family: "Font Awesome 5 Free";
+          content: "\f054";
+          display: inline-block;
+          vertical-align: middle;
+          font-weight: 900;
+          padding-left: 0.5rem;
+      }
+  */
+}
+#sidenav li {
+  line-height: 1rem;
+}
+#sidenav .nav-link.active,
+#sidenav .nav-link:hover,
+#sidenav .nav-link:focus {
+  border-bottom: 1px solid #007bff;
+}
+
+/* main 
+.main-border {
+    border-left: 1px solid #dee2e6;
+    
+    @media screen and (min-width: 7268px) {
+        border: none;
+    }
+}
+
+*/
+/* footer */
+.btop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #007bff;
+}
+
+/*# sourceMappingURL=main.css.map */
