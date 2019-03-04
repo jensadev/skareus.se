@@ -1,0 +1,19 @@
+extends layout
+
+block head
+    - var title = 'Affischer'
+    title Eva Skåreus - #{title} 
+
+block content
+    main.col-md-8.main-border
+        section
+            h1.border-bottom Affischer
+            p.lead Några affischer producerade under 2000-talet för feministiska/genusvetenskapliga/litterära sammanhang i samarbete med genusvetare, universitetet och Café Pilgatan, samt den första affischen för Holmöns Visfestival från starten 1994.
+            .row
+                +lightboximg(251)
+                +lightboximg(252)
+                +lightboximg(253)
+            .row
+                +lightboximg(254)
+                +lightboximg(255)
+                +lightboximg(256)    

@@ -1,0 +1,46 @@
+extends layout
+
+block head
+    - var title = 'Böcker'
+    title Eva Skåreus - #{title}
+
+block nav
+    - var links = []
+    - links.push({href: 'project.html', title: 'e', text: 'Utställningar och projekt'})
+    - links.push({href: 'posters.html', title: 'e', text: 'Affischer'})
+    - links.push({href: 'books.html', title: 'e', text: 'Böcker'})
+    - links.push({href: 'cv.html', title: 'e', text: 'CV'})   
+
+    - var books = []
+    - books.push({title:'Text och illustration' , id: 'books'})
+    - books.push({title:'Grafisk form' , id: 'graphic'})
+    - books.push({title:'Datorprogram för barn med funktionsnedsättning,' , id: 'computer'})
+    - books.push({title:'Akademiskt arbete' , id: 'academic'})
+
+    div.col-md-4
+        p.lead Född 1952 i Stockholm, bosatt i Umeå. Verksam som konstnär och illustratör sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid Institutionen för estetiska ämnen, Umeå universitet.    
+        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.title, link.text)
+                        if link.href == 'books.html'
+                            ul.nav.flex-column#sidenav
+                                each book in books
+                                    +subnavlink('#' + book.id, book.title)
+
+block content
+    main.col-md-8.main-border
+        h1.display-4.pb-3 Publikationer 
+            small på svenska, illustratör och författare
+        each book in books
+            +section(book.title, book.id)
+                case book.id
+                    when 'books'
+                        include:markdown-it markdown/books.md
+                    when 'graphic'
+                        include:markdown-it markdown/graphic.md
+                    when 'computer'
+                        include:markdown-it markdown/computer.md
+                    when 'academic'
+                        include:markdown-it markdown/academic.md

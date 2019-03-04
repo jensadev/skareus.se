@@ -1,0 +1,22 @@
+{
+  "name": "skareus.se",
+  "version": "1.0.0",
+  "description": "Static page for skareus.se",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JensAndreasson/skareus.se.git"
+  },
+  "author": "jensandreasson77@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JensAndreasson/skareus.se/issues"
+  },
+  "homepage": "https://github.com/JensAndreasson/skareus.se#readme",
+  "dependencies": {
+    "jstransformer-markdown-it": "^2.1.0"
+  }
+}

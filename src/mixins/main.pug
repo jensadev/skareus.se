@@ -2,18 +2,20 @@ mixin navlink(href, title, text)
     li.nav-item
         a.nav-link(href=href)= text
 
-mixin subnavlink(href, title, text, year)
+mixin subnavlink(href, text, year)
     li.nav-item.pl-2
-        a.nav-link.nav-sub(href=href title=title)
-            time(datetime=year)= year
-            | 
+        a.nav-link.nav-sub(href=href title=text)
+            if year
+                time(datetime=year)= year
+                | 
             = text
 
-mixin projectsection(headline, title, date)
+mixin section(headline, title, date)
     section.pb-5(id=title)
         h1.border-bottom
-            time(datetime=date)= date
-            | 
+            if date
+                time(datetime=date)= date
+                | 
             = headline
         if block
             block

@@ -1,0 +1,73 @@
+extends layout
+
+block head
+    - var title = 'CV'
+    title Eva Skåreus - #{title}
+
+block nav
+    - var links = []
+    - links.push({href: 'project.html', title: 'e', text: 'Utställningar och projekt'})
+    - links.push({href: 'posters.html', title: 'e', text: 'Affischer'})
+    - links.push({href: 'books.html', title: 'e', text: 'Böcker'})
+    - links.push({href: 'cv.html', title: 'e', text: 'CV'})   
+
+    - var cv = []
+    - cv.push({title:'Utbildningar' , id: 'education'})
+    - cv.push({title:'Utställningar' , id: 'exhibitions'})
+    - cv.push({title:'Representerad' , id: 'representation'})
+    - cv.push({title:'Illustratör' , id: 'illustrator'})
+
+    div.col-md-4
+        p.lead Född 1952 i Stockholm, bosatt i Umeå. Verksam som konstnär och illustratör sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid Institutionen för estetiska ämnen, Umeå universitet.    
+        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.title, link.text)
+                        if link.href == 'books.html'
+                            ul.nav.flex-column#sidenav
+                                each item in cv
+                                    +subnavlink('#' + item.id, item.title)
+
+block content
+    main.col-md-8.main-border
+        h1.display-4.pb-3 CV Eva Skåreus
+        each item in cv
+            +section(item.title, item.id)
+                case item.id
+                    when 'education'
+                        ul
+                            li Nyckelviksskolan
+                            li Handarbetets Vänner
+                            li Tollare Folkhögskola
+                            li Teckningslärarutbildning i Umeå
+                            li Bildterapeut, specialistutbildning i Umeå
+                            li Filosofie doktorsexamen i pedagogiskt arbete vid Institutionen för estetiska ämnen, Umeå universitet
+                case item.id
+                    when 'exhibitions'
+                        ul
+                            li Galleri 17, Stockholm -91
+                            li Västerbottens Museum Höstsalongen / Jubilarens Val, 1992, 1996, 2001, 2002, 2004
+                            li Stadsbiblioteket Umeå -93, -95, -96
+                            li Liljevalchs Vårsalongen -93
+                            li Holmsunds bibliotek -94
+                            li Nordiskt Forum, Kvinnokonferens, Affischutställning -94
+                            li Kulturmejeriet Umeå -95, -96, -97
+                            li Holmöns Båtmuseum, -96
+                            li BySide Sidewalk, -99
+                            li Norrbyskär 2000
+                            li Köpmanholmen 2009, 2013
+                            li öKKV/örnsköldsviks museum, 2010
+                case item.id
+                    when 'representation'
+                        li Umeå Kommun, Stadshuset och flera daghem
+                        li Holmöns skola
+                        li Sävar Kommundelsnämnd
+                        li Västerbottens läns landsting
+                        li Bibliotekens hyllor
+                case item.id
+                    when 'illustrator'
+                        li Oräkneliga bokomslag
+                        li Ett hundratal olika böcker och animationer till sex datorprogram.
+                        li Står som författare till sju av böckerna.
+                        li Affischer, bl.a. till Holmöns Visfestival

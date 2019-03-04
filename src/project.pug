@@ -30,12 +30,13 @@ block nav
                         if link.href == 'project.html'
                             ul.nav.flex-column#sidenav
                                 each project in projects
-                                    +subnavlink('#' + project.id, project.title, project.title, project.year)
+                                    +subnavlink('#' + project.id, project.title, project.year)
 
 block content
     main.col-md-8.main-border
+        h1.display-4.pb-3 Utställningar och projekt
         each project in projects
-            +projectsection(project.title, project.id, project.year)
+            +section(project.title, project.id, project.year)
                 case project.id
                     when 'archive2017'
                         p.lead Under 2016/2017 har styrelsen i föreningen Köpmanholmens fabriksträdgård arbetat fram en idéskiss för fortsättning av projektet: Arkivsalen.

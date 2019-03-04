@@ -1,2 +1,4 @@
 dist/images/affischer
 dist/images/utsproj
+node_modules
+package-lock.json
