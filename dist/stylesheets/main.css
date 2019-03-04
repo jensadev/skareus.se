@@ -1,10 +1,52 @@
+/* Coolors Exported Palette - coolors.co/13293d-006494-247ba0-1b98e0-e8f1f2 */
+/* RGB */
+@import url("https://fonts.googleapis.com/css?family=Hind+Madurai|Lora|Montserrat");
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #f5ebe6;
+  color: #13293d;
+  font-family: "Hind Madurai", sans-serif;
+}
+
+/* type */
+h1, h2, h3 {
+  color: #004261;
+  font-family: "Montserrat", sans-serif;
+}
+
+.lead {
+  font-family: "Lora", serif;
+}
+
+.display-4 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+.display-4 small {
+  font-size: 2rem;
+  font-weight: inherit;
+}
+
 /* Nav */
+.navbar a {
+  color: #247ba0;
+}
+.navbar a .active {
+  color: #006494;
+}
+.navbar a:hover {
+  color: #1b98e0;
+}
+.navbar a:focus {
+  color: #006494;
+}
+
 .nav-item {
-  font-size: 1.2rem;
+  line-height: 1.2;
 }
 
 .navbar-custom {
@@ -20,34 +62,51 @@ html {
 
 .navbar-brand {
   font-size: 2.6rem;
-  font-weight: 400;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+.navbar-brand a {
+  text-decoration: none;
+  color: #006494;
+}
+.navbar-brand a:hover {
+  color: #0086c7;
 }
 
 .nav-sub {
   font-size: 1.1rem;
 }
 
-#sidenav {
-  /*   .nav-link.active::after {
-          font-family: "Font Awesome 5 Free";
-          content: "\f054";
-          display: inline-block;
-          vertical-align: middle;
-          font-weight: 900;
-          padding-left: 0.5rem;
-      }
-  */
-}
 #sidenav li {
-  line-height: 1rem;
+  line-height: 1;
 }
-#sidenav .nav-link.active,
-#sidenav .nav-link:hover,
-#sidenav .nav-link:focus {
-  border-bottom: 1px solid #007bff;
+#sidenav .nav-link.active, #sidenav .nav-link:hover, #sidenav .nav-link:focus {
+  border-bottom: 1px solid #1b5b76;
 }
 
-/* main 
+/*   .nav-link.active::after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f054";
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 900;
+        padding-left: 0.5rem;
+    }
+*/
+/* main */
+.books ul {
+  list-style: none;
+  padding-left: 0;
+}
+.books li {
+  border-bottom: 1px solid #dee2e6;
+  line-height: 1.5rem;
+}
+.books li:hover {
+  background-color: #f4e8e2;
+}
+
+/*
 .main-border {
     border-left: 1px solid #dee2e6;
     
@@ -62,7 +121,7 @@ html {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: #007bff;
+  color: #006494;
 }
 
 /*# sourceMappingURL=main.css.map */

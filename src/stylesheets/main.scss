@@ -1,11 +1,58 @@
+@import "_palette.scss";
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai|Lora|Montserrat');
+
+$header : 'Montserrat', sans-serif;
+$lead : 'Lora', serif;
+$copy : 'Hind Madurai', sans-serif;
+
 html {
     scroll-behavior: smooth;
 }
-
-/* Nav */
-.nav-item {
-    font-size: 1.2rem;
+body {
+    background-color: $color5;
+    color: $color1;
+    font-family: $copy;
 }
+
+/* type */
+h1, h2, h3 {
+    color: darken($color2, 10%);
+    font-family: $header;
+}
+
+.lead {
+    font-family: $lead;
+}
+
+.display-4 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.1;
+    small {
+        font-size: 2rem;
+        font-weight: inherit;
+    }
+}
+/* Nav */
+.navbar {
+    a {
+        color: $color3;
+        .active {
+            color: $color2;
+        }
+        &:hover {
+            color: $color4;
+        }
+        &:focus {
+            color: $color2;
+        }
+    }
+}
+
+.nav-item {
+    line-height: 1.2;
+}
+
 .navbar-custom {
     padding-left: 0rem;
 
@@ -19,7 +66,15 @@ html {
 }
 .navbar-brand {    
     font-size: 2.6rem;
-    font-weight: 400;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    a {
+        text-decoration: none;
+        color: $color2;
+        &:hover {
+            color: lighten($color2, 10%);
+        }
+    }
 }
 
 .nav-sub {
@@ -28,13 +83,14 @@ html {
 
 #sidenav {
     li {
-    line-height: 1rem;
+        line-height: 1;
     }
-    .nav-link.active,
-    .nav-link:hover,
-    .nav-link:focus{
-        border-bottom: 1px solid #007bff;
+    .nav-link {
+        &.active, &:hover, &:focus {
+            border-bottom: 1px solid darken($color3, 10%);            
+        }
     }
+}
 /*   .nav-link.active::after {
         font-family: "Font Awesome 5 Free";
         content: "\f054";
@@ -44,9 +100,24 @@ html {
         padding-left: 0.5rem;
     }
 */
+
+/* main */
+
+.books {
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    li {
+        border-bottom: 1px solid #dee2e6;
+        line-height: 1.5rem;
+        &:hover {
+            background-color: darken($color5, 1%);
+        }
+    }
 }
 
-/* main 
+/*
 .main-border {
     border-left: 1px solid #dee2e6;
     
@@ -62,5 +133,5 @@ html {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    color: #007bff;
+    color: $color2;
 }
