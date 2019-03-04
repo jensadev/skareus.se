@@ -1,4 +1,4 @@
-* ”helskärmsanimeringar” 10 - 30 små historier/program, titel:
+* ”helskärmsanimeringar” 10 - 30 små historier/program
 * titta-trycka-lyssna , SIH Läromedel, 1992
 * leksaksaffären, SIH Läromedel, 1993
 * disco, SIH Läromedel, 1994

@@ -8,46 +8,67 @@ $copy : 'Hind Madurai', sans-serif;
 html {
     scroll-behavior: smooth;
 }
+
 body {
-    background-color: $color5;
+    background-color: lighten($color5, 2%);
     color: $color1;
     font-family: $copy;
+    font-feature-settings: "onum" 1;
+
+    @supports (font-variant-numeric: oldstyle-nums) {
+        font-feature-settings: normal;
+        font-variant-numeric: oldstyle-nums;
+    }
 }
 
 /* type */
 h1, h2, h3 {
     color: darken($color2, 10%);
     font-family: $header;
+    font-variant-numeric: lining-nums;
+}
+
+h2 {
+    color: $color2;
+    font-size: 1.6rem;
+    font-family: $lead;
+}
+
+h3 {
+    font-size: 1.4rem;
 }
 
 .lead {
     font-family: $lead;
+    font-size: 1.1rem;
 }
 
 .display-4 {
-    font-size: 3rem;
-    font-weight: 300;
+    font-size: 2rem;
     line-height: 1.1;
+    letter-spacing: 0.2rem;
     small {
-        font-size: 2rem;
-        font-weight: inherit;
+        font-size: 1.4rem;
+        color: rgba($color2, 0.8);
     }
 }
+
+/* links */
+a {
+    color: $color2;
+    .active {
+        color: $color2;
+    }
+    &:hover {
+        color: darken($color3, 10%);
+    }
+    &:focus {
+        color: $color2;
+    }
+}
+
 /* Nav */
-.navbar {
-    a {
-        color: $color3;
-        .active {
-            color: $color2;
-        }
-        &:hover {
-            color: $color4;
-        }
-        &:focus {
-            color: $color2;
-        }
-    }
-}
+
 
 .nav-item {
     line-height: 1.2;
@@ -57,7 +78,7 @@ h1, h2, h3 {
     padding-left: 0rem;
 
     .nav-item {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         padding-left: 0rem;
     }
     .nav-link {
@@ -86,20 +107,15 @@ h1, h2, h3 {
         line-height: 1;
     }
     .nav-link {
-        &.active, &:hover, &:focus {
-            border-bottom: 1px solid darken($color3, 10%);            
+        &.active, &:focus {
+            //border-bottom: 1px solid $color2;
+            text-decoration: underline; 
         }
     }
-}
-/*   .nav-link.active::after {
-        font-family: "Font Awesome 5 Free";
-        content: "\f054";
-        display: inline-block;
-        vertical-align: middle;
-        font-weight: 900;
-        padding-left: 0.5rem;
+    time {
+        letter-spacing: 0.08rem;
     }
-*/
+}
 
 /* main */
 
@@ -112,11 +128,21 @@ h1, h2, h3 {
         border-bottom: 1px solid #dee2e6;
         line-height: 1.5rem;
         &:hover {
-            background-color: darken($color5, 1%);
+            background-color: $color5;
         }
+    }
+    strong {
+        font-weight: 400;
+        font-size: 1.1rem;
     }
 }
 
+/* img */
+.img-thumbnail {
+    max-width: 220px;
+    min-width: 120px;
+    background-color: inherit;
+}
 /*
 .main-border {
     border-left: 1px solid #dee2e6;

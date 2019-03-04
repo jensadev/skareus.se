@@ -6,14 +6,18 @@ block head
 
 block content
     main.col-md-8.main-border
+        h1.display-4.pb-3 Affischer
         section
-            h1.border-bottom Affischer
-            p.lead Några affischer producerade under 2000-talet för feministiska/genusvetenskapliga/litterära sammanhang i samarbete med genusvetare, universitetet och Café Pilgatan, samt den första affischen för Holmöns Visfestival från starten 1994.
-            .row
-                +lightboximg(251)
-                +lightboximg(252)
-                +lightboximg(253)
-            .row
-                +lightboximg(254)
-                +lightboximg(255)
-                +lightboximg(256)    
+            p Några affischer producerade under 2000-talet för feministiska/genusvetenskapliga/litterära sammanhang i samarbete med genusvetare, universitetet och Café Pilgatan, samt den första affischen för Holmöns Visfestival från starten 1994.
+            .row.py-2
+                .container.text-center
+                    +lightboximg('aff_emoweb.jpg', 'aff_emostor.jpg', 'Affischer', 'Emotioner och skandinaviskt genus', 'affischer/')
+                    +lightboximg('aff_femweb.jpg', 'aff_femstor.jpg', 'Affischer', 'Bild, Svenska feminister', 'affischer/')
+                    +lightboximg('aff_3web.jpg', 'aff_3stor.jpg', 'Affischer', 'Genusforskare om aktuella samhällsfrågor', 'affischer/')
+            .row.py-2
+                .container.text-center
+                    +lightboximg('aff_4web.jpg', 'aff_4stor.jpg', 'Affischer', 'Kryckor som vinglar', 'affischer/')
+                    +lightboximg('aff_slideweb.jpg', 'aff_slidestor.jpg', 'Affischer', 'Kvinnliga författare', 'affischer/')
+            .row.py-2
+                .container.text-center
+                    +lightboximg('holmon.jpg', 'holmon.jpg', 'Affischer', 'Holmöns visfestival', 'affischer/')

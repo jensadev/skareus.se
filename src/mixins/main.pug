@@ -12,7 +12,7 @@ mixin subnavlink(href, text, year)
 
 mixin section(headline, title, date)
     section.pb-5(id=title)
-        h1.border-bottom
+        h2.border-bottom
             if date
                 time(datetime=date)= date
                 | 
@@ -20,6 +20,6 @@ mixin section(headline, title, date)
         if block
             block
 
-mixin lightboximg(no,gallery)
-    a.col-md.p-2(href='https://unsplash.it/1200/768.jpg?image=' + no, data-toggle='lightbox' data-gallery=gallery)
-        img.img-fluid.rounded(src='https://unsplash.it/600.jpg?image=' + no)
+mixin lightboximg(thumb, large, gallery, alt='', folder='')
+    a.col-md.px-2(href='images/' + folder + large, data-toggle='lightbox' data-gallery=gallery)
+        img.img-fluid.rounded.img-thumbnail(src='images/' + folder + thumb alt=alt)

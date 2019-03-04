@@ -45,8 +45,8 @@
 * I sinnenas värld - känsel, SIH Läromedel, Hagander, Moback, omslag, ca 18 tuschill. 1997
 * I sinnenas värld - syn, SIH Läromedel, Sahle´n, Berglund, omslag, ca 18 tuschill. 1997
 * De röda trosorna, SIH Läromedel, Holmberg, omslag, 16 akvareller, 1997
-* Love och Annabell, SIH Läromedel, Kral, omslag, 14 akvareller, 1997
-* 
+* Love och Annabell, SIH Läromedel, Kral, omslag, 14 akvareller, 1997  
+* &nbsp;
 * Jorden hon älskade, Ord och visor förlag, Thunqvist, omslag, 1998
 * I sinnenas värld - rörelse, kroppsuppfattning, SIH Läromedel, Feldtman, omslag, 18 tuschill. 1998
 * Två berättelser om Love, SIH Läromedel, Kral, omslag, 15 akvareller, 1998
