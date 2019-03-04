@@ -18,13 +18,13 @@ block nav
     - cv.push({title:'Illustratör' , id: 'illustrator'})
 
     div.col-md-4
-        p.lead Född 1952 i Stockholm, bosatt i Umeå. Verksam som konstnär och illustratör sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid Institutionen för estetiska ämnen, Umeå universitet.    
+        +sitelead('hide')
         nav.navbar-custom.navbar.navbar-expand-md.sticky-top
             .collapse.navbar-collapse#navbar
                 ul.nav.flex-column
                     each link in links
                         +navlink(link.href, link.title, link.text)
-                        if link.href == 'books.html'
+                        if link.href == 'cv.html'
                             ul.nav.flex-column#sidenav
                                 each item in cv
                                     +subnavlink('#' + item.id, item.title)

@@ -4,6 +4,21 @@ block head
     - var title = 'Affischer'
     title Eva Skåreus - #{title} 
 
+block nav
+    - var links = []
+    - links.push({href: 'project.html', title: 'e', text: 'Utställningar och projekt'})
+    - links.push({href: 'posters.html', title: 'e', text: 'Affischer'})
+    - links.push({href: 'books.html', title: 'e', text: 'Böcker'})
+    - links.push({href: 'cv.html', title: 'e', text: 'CV'})   
+
+    div.col-md-4.sticky-top
+        +sitelead('hide')
+        nav.navbar-custom.navbar.navbar-expand-md
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.title, link.text)
+
 block content
     main.col-md-8.main-border
         h1.display-4.pb-3 Affischer

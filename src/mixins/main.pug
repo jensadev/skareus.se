@@ -4,7 +4,7 @@ mixin navlink(href, title, text)
 
 mixin subnavlink(href, text, year)
     li.nav-item.pl-2
-        a.nav-link.nav-sub(href=href title=text)
+        a.nav-link.nav-sub(href=href)
             if year
                 time(datetime=year)= year
                 | 
@@ -23,3 +23,23 @@ mixin section(headline, title, date)
 mixin lightboximg(thumb, large, gallery, alt='', folder='')
     a.col-md.px-2(href='images/' + folder + large, data-toggle='lightbox' data-gallery=gallery)
         img.img-fluid.rounded.img-thumbnail(src='images/' + folder + thumb alt=alt)
+
+mixin sitelead(hide)
+    if hide
+        .d-none.d-md-block
+            p.lead(itemscope itemtype='http://schema.org/Person') Född 
+                span(itemprop='birthDate') 1952 
+                | i Stockholm, bosatt i 
+                span(itemprop='homeLocation') Umeå
+                | . Verksam som 
+                span(itemprop='jobTitle') konstnär och illustratör 
+                | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid Institutionen för estetiska ämnen, Umeå universitet.
+    else
+        div
+            p.lead(itemscope itemtype='http://schema.org/Person') Född 
+                span(itemprop='birthDate') 1952 
+                | i Stockholm, bosatt i 
+                span(itemprop='homeLocation') Umeå
+                | . Verksam som 
+                span(itemprop='jobTitle') konstnär och illustratör 
+                | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid Institutionen för estetiska ämnen, Umeå universitet.

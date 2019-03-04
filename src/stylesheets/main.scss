@@ -23,7 +23,7 @@ body {
 
 /* type */
 h1, h2, h3 {
-    color: darken($color2, 10%);
+    color: $color2;
     font-family: $header;
     font-variant-numeric: lining-nums;
 }
@@ -47,6 +47,7 @@ h3 {
     font-size: 2rem;
     line-height: 1.1;
     letter-spacing: 0.2rem;
+    font-weight: 600;
     small {
         font-size: 1.4rem;
         color: rgba($color2, 0.8);
@@ -155,6 +156,11 @@ a {
 */
 
 /* footer */
+
+footer {
+    color: rgba($color1, 0.6);
+}
+
 .btop {
     position: fixed;
     bottom: 20px;

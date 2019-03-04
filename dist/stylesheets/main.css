@@ -20,7 +20,7 @@ body {
 
 /* type */
 h1, h2, h3 {
-  color: #3d5974;
+  color: #4f7395;
   font-family: "Montserrat", sans-serif;
   font-variant-numeric: lining-nums;
 }
@@ -44,6 +44,7 @@ h3 {
   font-size: 2rem;
   line-height: 1.1;
   letter-spacing: 0.2rem;
+  font-weight: 600;
 }
 .display-4 small {
   font-size: 1.4rem;
@@ -142,6 +143,10 @@ a:focus {
 
 */
 /* footer */
+footer {
+  color: rgba(2, 30, 51, 0.6);
+}
+
 .btop {
   position: fixed;
   bottom: 20px;
