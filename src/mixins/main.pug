@@ -1,6 +1,9 @@
-mixin navlink(href, title, text)
+mixin navlink(href, text)
     li.nav-item
-        a.nav-link(href=href)= text
+        if text == title
+            a.nav-link.active(href=href)= text
+        else
+            a.nav-link(href=href)= text
 
 mixin subnavlink(href, text, year)
     li.nav-item.pl-2

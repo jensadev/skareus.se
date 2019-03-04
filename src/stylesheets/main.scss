@@ -46,7 +46,7 @@ h3 {
 .display-4 {
     font-size: 2rem;
     line-height: 1.1;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     font-weight: 600;
     small {
         font-size: 1.4rem;
@@ -57,9 +57,6 @@ h3 {
 /* links */
 a {
     color: $color2;
-    .active {
-        color: $color2;
-    }
     &:hover {
         color: darken($color3, 10%);
     }
@@ -73,6 +70,9 @@ a {
 
 .nav-item {
     line-height: 1.2;
+    .active {
+        text-decoration: underline;
+    }
 }
 
 .navbar-custom {
@@ -109,8 +109,7 @@ a {
     }
     .nav-link {
         &.active, &:focus {
-            //border-bottom: 1px solid $color2;
-            text-decoration: underline; 
+            text-decoration: underline;
         }
     }
     time {

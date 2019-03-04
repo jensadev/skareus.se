@@ -43,7 +43,7 @@ h3 {
 .display-4 {
   font-size: 2rem;
   line-height: 1.1;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   font-weight: 600;
 }
 .display-4 small {
@@ -53,9 +53,6 @@ h3 {
 
 /* links */
 a {
-  color: #4f7395;
-}
-a .active {
   color: #4f7395;
 }
 a:hover {
@@ -68,6 +65,9 @@ a:focus {
 /* Nav */
 .nav-item {
   line-height: 1.2;
+}
+.nav-item .active {
+  text-decoration: underline;
 }
 
 .navbar-custom {
