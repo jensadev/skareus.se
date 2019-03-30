@@ -17,20 +17,19 @@ block nav
     - books.push({title:'Datorprogram för barn med funktionsnedsättning,' , id: 'computer'})
     - books.push({title:'Akademiskt arbete' , id: 'academic'})
 
-    div.col-md-4
-        +sitelead('hide')
-        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
-            .collapse.navbar-collapse#navbar
-                ul.nav.flex-column
-                    each link in links
-                        +navlink(link.href, link.text)
-                        if link.href == 'books.html'
-                            ul.nav.flex-column#sidenav
-                                each book in books
-                                    +subnavlink('#' + book.id, book.title)
+    +sitelead('hide')
+    nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+        .collapse.navbar-collapse#navbar
+            ul.nav.flex-column
+                each link in links
+                    +navlink(link.href, link.text)
+                    if link.href == 'books.html'
+                        ul.nav.flex-column#sidenav
+                            each book in books
+                                +subnavlink('#' + book.id, book.title)
 
 block content
-    main.col-md-8.main-border.books
+    main.col-md-8.main-border.books.mt-4
         h1.display-4.pb-3 Publikationer 
             small på svenska, illustratör och författare
         each book in books

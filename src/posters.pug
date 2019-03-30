@@ -11,16 +11,15 @@ block nav
     - links.push({href: 'books.html', text: 'Böcker'})
     - links.push({href: 'cv.html', text: 'CV'})   
 
-    div.col-md-4.sticky-top
-        +sitelead('hide')
-        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
-            .collapse.navbar-collapse#navbar
-                ul.nav.flex-column
-                    each link in links
-                        +navlink(link.href, link.text)
+    +sitelead('hide')
+    nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+        .collapse.navbar-collapse#navbar
+            ul.nav.flex-column
+                each link in links
+                    +navlink(link.href, link.text)
 
 block content
-    main.col-md-8.main-border
+    main.col-md-8.main-border.mt-4
         h1.display-4.pb-3 Affischer
         section
             p Några affischer producerade under 2000-talet för feministiska/genusvetenskapliga/litterära sammanhang i samarbete med genusvetare, universitetet och Café Pilgatan, samt den första affischen för Holmöns Visfestival från starten 1994.
