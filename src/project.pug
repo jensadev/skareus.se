@@ -20,19 +20,20 @@ block nav
     - projects.push({title: 'Skisser arkivsalen', id: 'archive2017', year: '2017'})
     - projects = projects.reverse()
 
-    +sitelead('hide')
-    nav.navbar-custom.navbar.navbar-expand-md.sticky-top
-        .collapse.navbar-collapse#navbar
-            ul.nav.flex-column
-                each link in links
-                    +navlink(link.href, link.text)
-                    if link.href == 'project.html'
-                        ul.nav.flex-column#sidenav
-                            each project in projects
-                                +subnavlink('#' + project.id, project.title, project.year)
+    div.col-md-4
+        +sitelead('hide')
+        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.text)
+                        if link.href == 'project.html'
+                            ul.nav.flex-column#sidenav
+                                each project in projects
+                                    +subnavlink('#' + project.id, project.title, project.year)
 
 block content
-    main.col-md-8.main-border.mt-4
+    main.col-md-8.main-border
         h1.display-4.pb-3 Utställningar och projekt
         each project in projects
             +section(project.title, project.id, project.year)

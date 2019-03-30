@@ -14,12 +14,12 @@ html(lang="sv")
     body(data-spy='scroll' data-target='#sidenav' data-offset='0')
         include mixins/main
         .container
+            block header
+                include header
+
             .row.h-100
-                div.col-md-4.sticky-top
-                    block header
-                            include header   
-                    block nav
-                        include nav
+                block nav         
+                    include nav
 
                 block content
 

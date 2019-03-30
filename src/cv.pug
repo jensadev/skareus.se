@@ -17,19 +17,20 @@ block nav
     - cv.push({title:'Representerad' , id: 'representation'})
     - cv.push({title:'Illustratör' , id: 'illustrator'})
 
-    +sitelead('hide')
-    nav.navbar-custom.navbar.navbar-expand-md.sticky-top
-        .collapse.navbar-collapse#navbar
-            ul.nav.flex-column
-                each link in links
-                    +navlink(link.href, link.text)
-                    if link.href == 'cv.html'
-                        ul.nav.flex-column#sidenav
-                            each item in cv
-                                +subnavlink('#' + item.id, item.title)
+    div.col-md-4
+        +sitelead('hide')
+        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.text)
+                        if link.href == 'cv.html'
+                            ul.nav.flex-column#sidenav
+                                each item in cv
+                                    +subnavlink('#' + item.id, item.title)
 
 block content
-    main.col-md-8.main-border.mt-4
+    main.col-md-8.main-border
         h1.display-4.pb-3 CV Eva Skåreus
         each item in cv
             +section(item.title, item.id)

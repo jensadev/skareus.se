@@ -7,10 +7,10 @@ block nav
     - links.push({href: 'books.html', text: 'Böcker'})
     - links.push({href: 'cv.html', text: 'CV'})   
 
-
-    +sitelead()
-    nav.navbar-custom.navbar.navbar-expand-md.sticky-top
-        .collapse.navbar-collapse#navbar
-            ul.nav.flex-column
-                each link in links
-                    +navlink(link.href, link.text)
+    div.col-md-4.sticky-top
+        +sitelead()
+        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+            .collapse.navbar-collapse#navbar
+                ul.nav.flex-column
+                    each link in links
+                        +navlink(link.href, link.text)
