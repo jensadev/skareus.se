@@ -1,14 +1,10 @@
 $font: 'News Cycle', sans-serif;
 
 :root {
-    --color-primary: #428bca;
-    --color-primary-darker: #2a6496;
-    --color-dark: #121212;
-    --color-light: #f8f4ed;
-    --color-grey: #f5f5f5;
-
-
-
+    --color-primary: 68, 140, 202;
+    --color-primary-darker: 42, 100, 150;
+    --color-dark: 18, 18, 18;
+    --color-light: 248, 244, 237;
 }
 
 html {
@@ -16,9 +12,9 @@ html {
 }
 
 body {
-    background-color: lighten($color5, 2%);
-    color: $color1;
-    font-family: $copy;
+    background-color: rgb(var(--color-light));
+    color: rgb(var(--color-dark));
+    font-family: $font;
     font-feature-settings: "onum" 1;
 
     @supports (font-variant-numeric: oldstyle-nums) {
@@ -29,15 +25,16 @@ body {
 
 /* type */
 h1, h2, h3 {
-    color: $color2;
-    font-family: $header;
+    color: rgb(var(--color-primary));
+    font-family: $font;
     font-variant-numeric: lining-nums;
+    font-weight: 700;
 }
 
 h2 {
-    color: $color2;
+    color: rgb(var(--color-primary));
     font-size: 1.6rem;
-    font-family: $lead;
+    font-family: $font;
 }
 
 h3 {
@@ -45,7 +42,7 @@ h3 {
 }
 
 .lead {
-    font-family: $lead;
+    font-family: $font;
     font-size: 1.1rem;
 }
 
@@ -53,21 +50,21 @@ h3 {
     font-size: 2rem;
     line-height: 1.1;
     letter-spacing: 0.1rem;
-    font-weight: 600;
+    font-weight: 700;
     small {
         font-size: 1.4rem;
-        color: rgba($color2, 0.8);
+        color: rgba(var(--color-primary), 0.8);
     }
 }
 
 /* links */
 a {
-    color: $color2;
+    color: rgb(var(--color-primary));
     &:hover {
-        color: darken($color3, 10%);
+        color: rgb(var(--color-primary-darker));
     }
     &:focus {
-        color: $color2;
+        color: rgb(var(--color-primary));
     }
 }
 
@@ -98,9 +95,9 @@ a {
     letter-spacing: 0.2rem;
     a {
         text-decoration: none;
-        color: $color2;
+        color: rgb(var(--color-primary));
         &:hover {
-            color: lighten($color2, 10%);
+            color: rgb(var(--color-primary-darker));
         }
     }
 }
@@ -131,15 +128,15 @@ a {
         padding-left: 0;
     }
     li {
-        border-bottom: 1px solid #dee2e6;
+        border-bottom: 1px solid rgb(var(--color-light));
         line-height: 1.5rem;
         &:hover {
-            background-color: $color5;
+            background-color: rgba(var(--color-primary), .1);
         }
     }
     strong {
-        font-weight: 500;
-        color: lighten($color2, 10%);
+        font-weight: 700;
+        color: rgba(var(--color-dark), .8);
     }
 }
 
@@ -150,15 +147,9 @@ a {
     background-color: inherit;
 }
 
-/* footer */
-
-footer {
-    color: rgba($color1, 0.6);
-}
-
 .btop {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    color: $color2;
+    color: rgb(var(--color-primary));
 }
