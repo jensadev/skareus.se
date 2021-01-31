@@ -1,52 +1,96 @@
 mixin navlink(href, text)
-    li.nav-item
-        if text == title
-            a.nav-link.active(href=href)= text
-        else
-            a.nav-link(href=href)= text
+  li.nav-item
+    if text == title
+      a.nav-link.active(href=href)= text
+    else
+      a.nav-link(href=href)= text
 
 mixin subnavlink(href, text, year)
-    li.nav-item.pl-2
-        a.nav-link.nav-sub(href=href)
-            if year
-                time(datetime=year)= year
-                | 
-            = text
+  li.nav-item.pl-2
+    a.nav-link.nav-sub(href=href)
+      if year
+        time(datetime=year)= year
+        | 
+      = text
 
 mixin section(headline, title, date)
-    section.pb-5(id=title)
-        h2.border-bottom
-            if date
-                time(datetime=date)= date
-                | 
-            = headline
-        if block
-            block
+  section.pb-5(id=title)
+    h2.border-bottom
+      if date
+        time(datetime=date)= date
+        | 
+      = headline
+    if block
+      block
 
-mixin lightboximg(thumb, large, gallery, alt='', folder='')
-    a.col-md.px-2(href='images/' + folder + large, data-toggle='lightbox' data-gallery=gallery)
-        img.img-fluid.rounded.img-thumbnail(src='images/' + folder + thumb alt=alt)
+//- mixin lightboximg(thumb, large, gallery, alt='' folder='')
+//-     a.col-md.px-2(href='images/' + folder + large, data-toggle='lightbox' data-gallery=gallery)
+//-         img.img-fluid.rounded.img-thumbnail(src='images/' + folder + thumb alt=alt)
+
+//- button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal')
+//-   | Launch demo modal
+
+mixin lightbox(project, images, alts, folder='')
+  div.modal.fade(id=project + 'Modal' tabindex='-1' aria-labelledby=project aria-hidden='true')
+    .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+      .modal-content
+        .modal-header
+          button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+        .modal-body
+          div.carousel.slide(id=project + 'Carousel' data-bs-ride='carousel')
+            .carousel-inner
+              each image, index in images
+                if index == 0
+                  .carousel-item.active
+                    img.d-block.w-100(
+                      src='images/' + folder + image
+                      alt=alts[index])
+                else
+                  .carousel-item
+                    img.d-block.w-100(
+                      src='images/' + folder + image
+                      alt=alts[index])
+
+            a.carousel-control-prev(
+              href='#' + project + 'Carousel'
+              role='button'
+              data-bs-slide='prev')
+              span.carousel-control-prev-icon(aria-hidden='true')
+              span.visually-hidden Previous
+            a.carousel-control-next(
+              href='#' + project + 'Carousel'
+              role='button'
+              data-bs-slide='next')
+              span.carousel-control-next-icon(aria-hidden='true')
+              span.visually-hidden Next
+
+mixin lightboxlink(thumb, project, image, alt='', folder='')
+  img.img-fluid.rounded.img-thumbnail(
+    src='images/' + folder + thumb
+    alt=alt
+    data-bs-target='#' + project + 'Carousel'
+    data-bs-slide-to=image)
 
 mixin sitelead(hide)
-    if hide
-        .d-none.d-md-block
-            p.lead(itemscope itemtype='http://schema.org/Person') Född 
-                span(itemprop='birthDate') 1952 
-                | i Stockholm, bosatt i 
-                span(itemprop='homeLocation') Umeå
-                | . Verksam som 
-                span(itemprop='jobTitle') konstnär och illustratör 
-                | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 
-                a(href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
-                | , Umeå universitet.
-    else
-        div
-            p.lead(itemscope itemtype='http://schema.org/Person') Född 
-                span(itemprop='birthDate') 1952 
-                | i Stockholm, bosatt i 
-                span(itemprop='homeLocation') Umeå
-                | . Verksam som 
-                span(itemprop='jobTitle') konstnär och illustratör 
-                | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 
-                a(href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
-                | , Umeå universitet.
+  if hide
+    .d-none.d-md-block
+      p.lead(itemscope itemtype='http://schema.org/Person') Född 
+        span(itemprop='birthDate') 1952 
+        | i Stockholm, bosatt i 
+        span(itemprop='homeLocation') Umeå
+        | . Verksam som 
+        span(itemprop='jobTitle') konstnär och illustratör 
+        | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 
+        a(href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
+        | , Umeå universitet.
+  else
+    div
+      p.lead(itemscope itemtype='http://schema.org/Person') Född 
+        span(itemprop='birthDate') 1952 
+        | i Stockholm, bosatt i 
+        span(itemprop='homeLocation') Umeå
+        | . Verksam som 
+        span(itemprop='jobTitle') konstnär och illustratör 
+        | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 
+        a(href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
+        | , Umeå universitet.

@@ -1,167 +1,179 @@
 extends layout
 
 block head
-    - var title = 'Utställningar och projekt'
-    title Eva Skåreus - #{title}
+  - var title = 'Utställningar och projekt'
+  title Eva Skåreus - #{title}
 
 block nav
-    - var links = []
-    - links.push({href: 'project.html', text: 'Utställningar och projekt'})
-    - links.push({href: 'posters.html', text: 'Affischer'})
-    - links.push({href: 'books.html', text: 'Böcker'})
-    - links.push({href: 'cv.html', text: 'CV'})   
+  - var links = []
+  - links.push({href: 'project.html', text: 'Utställningar och projekt'})
+  - links.push({href: 'posters.html', text: 'Affischer'})
+  - links.push({href: 'books.html', text: 'Böcker'})
+  - links.push({href: 'cv.html', text: 'CV'})   
 
-    - var projects = []
-    - projects.push({title: '& (och)', id: 'and2000', year: '2000'})
-    - projects.push({title: 'Fotografiateljé', id: 'photo2009', year: '2009'})
-    - projects.push({title: 'Köpmanholmens hjärta', id: 'heart2011', year: '2011'})
-    - projects.push({title: 'Påstigaren / Lokal Transit', id: 'transit2013', year: '2013'})
-    - projects.push({title: 'Köpmanholmens fabriksträdgård', id: 'factory2015', year: '2015'})
-    - projects.push({title: 'Skisser arkivsalen', id: 'archive2017', year: '2017'})
-    - projects = projects.reverse()
+  - var projects = []
+  - projects.push({title: '& (och)', id: 'och2000', year: '2000'})
+  - projects.push({title: 'Fotografiateljé', id: 'foto2009', year: '2009'})
+  - projects.push({title: 'Köpmanholmens hjärta', id: 'hjärtat2011', year: '2011'})
+  - projects.push({title: 'Påstigaren / Lokal Transit', id: 'transit2013', year: '2013'})
+  - projects.push({title: 'Köpmanholmens fabriksträdgård', id: 'fabriksträdgården2015', year: '2015'})
+  //- - projects.push({title: 'Skisser arkivsalen', id: 'archive2017', year: '2017'})
+  - projects.push({title: 'Det hänger på konsten', id: 'konst2016', year: '2016'})
+  - projects.push({title: 'Arkivsalen', id: 'arkivsalen2018', year: '2018'})
+  - projects.push({title: 'Samlingsutställning  ', id: 'samling2019', year: '2019'})
+  - projects.push({title: 'Prydnadsapelallé', id: 'alle2020', year: '2020'})
+  - projects = projects.reverse()
 
-    div.col-md-4
-        +sitelead('hide')
-        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
-            .collapse.navbar-collapse#navbar
-                ul.nav.flex-column
-                    each link in links
-                        +navlink(link.href, link.text)
-                        if link.href == 'project.html'
-                            ul.nav.flex-column#sidenav
-                                each project in projects
-                                    +subnavlink('#' + project.id, project.title, project.year)
+  div.col-md-4
+    +sitelead('hide')
+    nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+      .collapse.navbar-collapse#navbar
+        ul.nav.flex-column
+          each link in links
+            +navlink(link.href, link.text)
+            if link.href == 'project.html'
+              ul.nav.flex-column#sidenav
+                each project in projects
+                  +subnavlink('#' + project.id, project.title, project.year)
 
 block content
-    main.col-md-8.main-border
-        h1.display-4.pb-3 Utställningar och projekt
-        each project in projects
-            +section(project.title, project.id, project.year)
-                case project.id
-                    when 'archive2017'
-                        p Under 2016/2017 har styrelsen i föreningen Köpmanholmens fabriksträdgård arbetat fram en idéskiss för fortsättning av projektet: Arkivsalen.
-                            | 
-                            | Bilden i orginalstorlek finns att hämta här, 
-                            a(href='images/arkivsal.jpg' target='_blank') Arkivsalen
-                            | .
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('arkivsal_thmb.jpg', 'arkivsal_lrg.jpg', project.id, 'Idéskiss arkivsalen')
-                                +lightboximg('inblick_thmb.jpg', 'inblick.jpg', project.id, 'Akvarell av en inblick i arkivsalen')
-                    when 'factory2015'
-                        p 
-                            em Har du någonsin besökt Köpmanholmen i Västernorrland?
-                        p Köpmanholmen är ett gammalt brukssamhälle som ligger i Höga Kusten, vid havet, ca 3 mil söder om Örnsköldsvik. Det är också från Köpmanholmen som den fasta förbindelsen med Ulvön och Trysunda finns, några av de öar som ingår i Höga kustens skärgård.
-                        p Den mark i Köpmanholmen, som fram till 1980-talet var bebyggd av fabrikshus, traverser och magasin, är idag sanerad, de flesta byggnader är rivna och området är stort och platt med utsikt över fjärden och den nuvarande industrihamnen.
-                        p Här, i det gamla fabriksområdet, bygger vi en besöksträdgård, en permanent konstinstallation till glädje för alla som rör sig i området.
-                        p Läs mer om projektet på 
-                            a(href='http://blog.skareus.se' title='Länk till webbplats för Köpmanholmens fabriksträdgård' target='_blank') Köpmanholmens fabriksträdgård
-                            | .
-                        .row.py-2
-                            .container.text-center
-                                img.img-fluid.rounded(src='images/vy.jpg' alt='Vy över delar av det gamla fabriksområdet')
-                    when 'transit2013'
-                        p En dag i juli 2013, när sommaren var som bäst och solen värmde gott, var dessa människor nere på kajen i Köpmanholmen. De var tillfälliga besökare i skärgårdsbåtarnas väntkur. Några var långvägsresenärer, från Tjeckien eller Norge, medan andra bodde nästgårds och tog tillfället i akt att ta sig ner på kajen eller åka ut i skärgården en varm sommardag.
-                        p För att kunna ta båten, till Trysunda, Strängöarna eller Ulvön, måste du som passagerare gå genom väntkuren, dvs för en kort stund vara i transit. Statistiken säger att ca 50.000 människor passerar där varje år. 50.000 i transit på Köpmanholmens kaj…
-                        p Väntkuren är inte viktigt i sig, en plats man passerar, men en plats som på ett eller annat sätt påverkar människors identitet. Den utgör en gräns att passera inom vilken man till exempel går från bilresenär till båtresenär, från stadsbo till tillfällig skärgårdsbo, från besökare till hemmahörande. Man är i transit, ska bara genom, på väg bort, någon annanstans. Väntkuren är enbart namngivet som kur på en skylt inne i byggnaden. över ingången står det ”Påstigande”. När du går in i byggnaden tillhör du alltså kategorin ”påstigande” oavsett om du tänker stiga på båten eller inte.
-                        p 
-                            em Tack alla påstigare som ville delta i detta konstprojekt!
-                        ul
-                            li
-                                a(target='_blank', href='eva/info.pdf' title='Länk till PDF dokument om projektet') PDF om Påstigaren / Lokal Transit
-                            li
-                                a(target='_blank', href='http://www.volym.info/Arkiv/Reportage/2013/EvaSkareus/EvaSkareus.html') Artikel om projektet i Volym
+  main.col-md-8.main-border
+    h1.display-4.pb-3 Utställningar och projekt
+    each project in projects
+      +section(project.title, project.id, project.year)
+        case project.id
+          when 'alle2020'
+            p  leder till bild samt kort text
+          when 'samling2019'
+            p leder till kort text och artikel (pdf) om utställningen (ÖA)
+          when 'arkivsalen2018'
+            p länk till fabriksträdgårdens sida om Arkivsalen (ska öppnas i egen flik)
+          when 'konst2016'
+            p kort text + 6 bilder samt tidningsartikel pdf. 
+          when 'fabriksträdgården2015'
+            p 
+              em Har du någonsin besökt Köpmanholmen i Västernorrland?
+            p Köpmanholmen är ett gammalt brukssamhälle som ligger i Höga Kusten, vid havet, ca 3 mil söder om Örnsköldsvik. Det är också från Köpmanholmen som den fasta förbindelsen med Ulvön och Trysunda finns, några av de öar som ingår i Höga kustens skärgård.
+            p Den mark i Köpmanholmen, som fram till 1980-talet var bebyggd av fabrikshus, traverser och magasin, är idag sanerad, de flesta byggnader är rivna och området är stort och platt med utsikt över fjärden och den nuvarande industrihamnen.
+            p Här, i det gamla fabriksområdet, bygger vi en besöksträdgård, en permanent konstinstallation till glädje för alla som rör sig i området.
+            p Läs mer om projektet på 
+              a(href='http://blog.skareus.se' title='Länk till webbplats för Köpmanholmens fabriksträdgård' target='_blank') Köpmanholmens fabriksträdgård
+              | .
+            .row.py-2
+              .container.text-center
+                img.img-fluid.rounded(src='images/vy.jpg' alt='Vy över delar av det gamla fabriksområdet')
+          when 'transit2013'
+            p En dag i juli 2013, när sommaren var som bäst och solen värmde gott, var dessa människor nere på kajen i Köpmanholmen. De var tillfälliga besökare i skärgårdsbåtarnas väntkur. Några var långvägsresenärer, från Tjeckien eller Norge, medan andra bodde nästgårds och tog tillfället i akt att ta sig ner på kajen eller åka ut i skärgården en varm sommardag.
+            p För att kunna ta båten, till Trysunda, Strängöarna eller Ulvön, måste du som passagerare gå genom väntkuren, dvs för en kort stund vara i transit. Statistiken säger att ca 50.000 människor passerar där varje år. 50.000 i transit på Köpmanholmens kaj…
+            p Väntkuren är inte viktigt i sig, en plats man passerar, men en plats som på ett eller annat sätt påverkar människors identitet. Den utgör en gräns att passera inom vilken man till exempel går från bilresenär till båtresenär, från stadsbo till tillfällig skärgårdsbo, från besökare till hemmahörande. Man är i transit, ska bara genom, på väg bort, någon annanstans. Väntkuren är enbart namngivet som kur på en skylt inne i byggnaden. över ingången står det ”Påstigande”. När du går in i byggnaden tillhör du alltså kategorin ”påstigande” oavsett om du tänker stiga på båten eller inte.
+            p 
+              em Tack alla påstigare som ville delta i detta konstprojekt!
+            ul
+              li
+                a(target='_blank' href='eva/info.pdf' title='Länk till PDF dokument om projektet') PDF om Påstigaren / Lokal Transit
+              li
+                a(target='_blank' href='http://www.volym.info/Arkiv/Reportage/2013/EvaSkareus/EvaSkareus.html') Artikel om projektet i Volym
 
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('show1web.jpg', 'show1_stor.jpg', project.id, 'Från utställningen på restaurang Kajen', 'utsproj/transit/')
-                                +lightboximg('show2web.jpg', 'show2_stor.jpg', project.id, 'Från utställningen på restaurang Kajen', 'utsproj/transit/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('kurweb.jpg', 'kur_stor.jpg', project.id, 'Väntkuren på Köpmanholmens kaj, exteriör', 'utsproj/transit/')
-                                +lightboximg('kur2web.jpg', 'kur2_stor.jpg', project.id, 'Väntkuren på Köpmanholmens kaj, interiör', 'utsproj/transit/')
-                                +lightboximg('kur3web.jpg', 'kur3_stor.jpg', project.id, 'Väntkuren på Köpmanholmens kaj, interiör', 'utsproj/transit/')
-                    when 'heart2011'
-                        p
-                            em – en dahliarabatt i det gamla fabriksområdet
-                        p Under sommaren 2011 genomförde jag ett konstprojekt i Köpmanholmens gamla fabriksområde. Projektet var en blomsterrabatt i form av ett hjärta, bestående av 440 dahlior och 112 silverekar och några solrosor samlade i en egen rabatt.
-                        p Den 2–3 juli bjöd jag inKöpmanholmsborna att hjälpa till med planteringen. Ett 30-tal personer kom. Tre tältstolar fick sedan stå kvar (efter fikaserveringen) som en del av konstprojektet och som en inbjudan för besökare att sitta ner och titta på hjärtat. Under hela sommaren blev ”Köpmanholmens hjärta” en mötesplats för många besökare. Den 16:e oktober plockades alla blommor bort.
-                        p Tankarna bakom projektet var att uppmärksamma industriområdet genom ett platsspecifikt konstverk och därigenom skapa någon form av återupprättelse, att göra platsen synligt igen, men på ett annat sätt än tidigare. Fram till mitten av 1980-talet var området tätt bebyggt med hus och industribyggnader som tillhörde bruket. Sedan revs allt och idag är det ett ingemansland, tomt och övergivet. För gamla Köpmanholmsbor verkar området mer eller mindre som en spökby, ”där stod cisternerna och där var förmansbostaden, Konsum 1:an och huggeriet”, medan för besökaren utan historisk förankring är det en flack slätt med utsikt över fjärden. Men det är också Köpmanholmens gamla hjärta, den plats där arbetet låg och den plats som utgjorde motorn i samhällsbygget.
-                        p Projektet genomfördes med stöd från Nätterlundsstiftelsen, MIVA och Bjästa Handelsträdgård.
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('heartskissweb.jpg', 'heartskiss_stor.jpg', project.id, 'Skiss av hjärtat', 'utsproj/heart/')
-                                +lightboximg('heart2web.jpg', 'heart2_stor.jpg', project.id, 'Hjärtat i september, lite från ovan', 'utsproj/heart/')
-                                +lightboximg('heart1web.jpg', 'heart1_stor.jpg', project.id, 'Planteringen med utsikt mot fjärden', 'utsproj/heart/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('plant1web.jpg', 'plant1_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
-                                +lightboximg('plant2web.jpg', 'plant2_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
-                                +lightboximg('plant3web.jpg', 'plant3_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('rosweb.jpg', 'ros_stor.jpg', project.id, 'Solrosorna och hjärtat', 'utsproj/heart/')
-                                +lightboximg('heart3web.jpg', 'heart3_stor.jpg', project.id, 'Bild av hjärtat', 'utsproj/heart/')
-                    when 'photo2009'
-                        p Under 2009 fyllde den gamla fotografiateljén i Köpmanholmen 80 år. För att fira det bjöd jag in Holmenborna under fyra dagar i juli till en friluftsateljé i trädgården. En stol, en innerdörr och trädgårdens grönska utgjorde ateljé, som en replik av dåtida fotografiateljéers målade fondväggar av grönska och balustrader samt en obligatorisk stol framför. Inbjudan resulterade i 53 fotografier som visades på restaurangen Kajen.
-                        ul
-                            li
-                                a(target='_blank', href='eva/info_proj.pdf' title='Länk till PDF dokument om projektet') PDF om projektet Fotografateljé
-                            li
-                                a(target='_blank', href='eva/artikel-allehanda.se.pdf', title='Artikel från allehanda.se i PDF format') En gammal fotoateljé återuppstår - Artiklar - allehanda.se
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('show1web.jpg',  project.id, 0, 'Från utställningen på restaurang Kajen', 'utsproj/transit/')
+                +lightboxlink('show2web.jpg',  project.id, 1, 'Från utställningen på restaurang Kajen', 'utsproj/transit/')
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('kurweb.jpg', project.id, 2, 'Väntkuren på Köpmanholmens kaj, exteriör', 'utsproj/transit/')
+                +lightboxlink('kur2web.jpg', project.id, 3, 'Väntkuren på Köpmanholmens kaj, interiör', 'utsproj/transit/')
+                +lightboxlink('kur3web.jpg', project.id, 4, 'Väntkuren på Köpmanholmens kaj, interiör', 'utsproj/transit/')
+          when 'hjärtat2011'
+            p
+              em – en dahliarabatt i det gamla fabriksområdet
+            p Under sommaren 2011 genomförde jag ett konstprojekt i Köpmanholmens gamla fabriksområde. Projektet var en blomsterrabatt i form av ett hjärta, bestående av 440 dahlior och 112 silverekar och några solrosor samlade i en egen rabatt.
+            p Den 2–3 juli bjöd jag inKöpmanholmsborna att hjälpa till med planteringen. Ett 30-tal personer kom. Tre tältstolar fick sedan stå kvar (efter fikaserveringen) som en del av konstprojektet och som en inbjudan för besökare att sitta ner och titta på hjärtat. Under hela sommaren blev ”Köpmanholmens hjärta” en mötesplats för många besökare. Den 16:e oktober plockades alla blommor bort.
+            p Tankarna bakom projektet var att uppmärksamma industriområdet genom ett platsspecifikt konstverk och därigenom skapa någon form av återupprättelse, att göra platsen synligt igen, men på ett annat sätt än tidigare. Fram till mitten av 1980-talet var området tätt bebyggt med hus och industribyggnader som tillhörde bruket. Sedan revs allt och idag är det ett ingemansland, tomt och övergivet. För gamla Köpmanholmsbor verkar området mer eller mindre som en spökby, ”där stod cisternerna och där var förmansbostaden, Konsum 1:an och huggeriet”, medan för besökaren utan historisk förankring är det en flack slätt med utsikt över fjärden. Men det är också Köpmanholmens gamla hjärta, den plats där arbetet låg och den plats som utgjorde motorn i samhällsbygget.
+            p Projektet genomfördes med stöd från Nätterlundsstiftelsen, MIVA och Bjästa Handelsträdgård.
+            .row.py-2
+              .container.text-center
+                //- +lightboximg('heartskissweb.jpg', 'heartskiss_stor.jpg', project.id, 'Skiss av hjärtat', 'utsproj/heart/')
+                //- +lightboximg('heart2web.jpg', 'heart2_stor.jpg', project.id, 'Hjärtat i september, lite från ovan', 'utsproj/heart/')
+                //- +lightboximg('heart1web.jpg', 'heart1_stor.jpg', project.id, 'Planteringen med utsikt mot fjärden', 'utsproj/heart/')
+            .row.py-2
+              .container.text-center
+                //- +lightboximg('plant1web.jpg', 'plant1_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
+                //- +lightboximg('plant2web.jpg', 'plant2_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
+                //- +lightboximg('plant3web.jpg', 'plant3_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
+            .row.py-2
+              .container.text-center
+                //- +lightboximg('rosweb.jpg', 'ros_stor.jpg', project.id, 'Solrosorna och hjärtat', 'utsproj/heart/')
+                //- +lightboximg('heart3web.jpg', 'heart3_stor.jpg', project.id, 'Bild av hjärtat', 'utsproj/heart/')
+          when 'foto2009'
+            p Under 2009 fyllde den gamla fotografiateljén i Köpmanholmen 80 år. För att fira det bjöd jag in Holmenborna under fyra dagar i juli till en friluftsateljé i trädgården. En stol, en innerdörr och trädgårdens grönska utgjorde ateljé, som en replik av dåtida fotografiateljéers målade fondväggar av grönska och balustrader samt en obligatorisk stol framför. Inbjudan resulterade i 53 fotografier som visades på restaurangen Kajen.
+            ul
+              li
+                a(target='_blank' href='eva/info_proj.pdf' title='Länk till PDF dokument om projektet') PDF om projektet Fotografateljé
+              li
+                a(target='_blank' href='eva/artikel-allehanda.se.pdf' title='Artikel från allehanda.se i PDF format') En gammal fotoateljé återuppstår - Artiklar - allehanda.se
 
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('kvinnaweb.jpg', 'kvinnaweb.jpg', project.id, 'Kvinna', 'utsproj/fotoatelje/')
-                                +lightboximg('manweb.jpg', 'manweb.jpg', project.id, 'Man', 'utsproj/fotoatelje/')
-                                +lightboximg('uteateljeweb.jpg', 'uteatelje_stor.jpg', project.id, 'Uteteljé', 'utsproj/fotoatelje/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('utst1web.jpg', 'utst1web.jpg', project.id, 'Utställningen', 'utsproj/fotoatelje/')
-                                +lightboximg('utst2web.jpg', 'utst2_stor.jpg', project.id, 'Utställningen', 'utsproj/fotoatelje/')
-                    when 'and2000'
-                        p Sommaren 2000 genomförde 
-                            a(target='_blank', href='http://www.kim.konstdesign.nu/') Kim Stenlund 
-                            | och jag en utställning på Norrbyskär. Kim visade smycken och textila bilder medan jag visade akvareller, digitaliserade akvareller och akvarelliserade digitaler med rosor och clownen.
-                        h3 Rosor
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('amoros2.jpg', 'amorosa.jpg', project.id, 'Amorosa', 'utsproj/rosor/')
-                                +lightboximg('barblik2.jpg', 'barbarlik.jpg', project.id, 'Barbara Liksom', 'utsproj/rosor/')
-                                +lightboximg('beckask2.jpg', 'beckoaska.jpg', project.id, 'Beck & Aska', 'utsproj/rosor/')
-                                +lightboximg('mifigl2.jpg', 'miafigl.jpg', project.id, 'Mia Figlia', 'utsproj/rosor/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('minetros2.jpg', 'minetroset.jpg', project.id, 'Minetta Rosetta', 'utsproj/rosor/')
-                                +lightboximg('nattdrot2.jpg', 'nattdrottn.jpg', project.id, 'Nattens Drottning', 'utsproj/rosor/')
-                                +lightboximg('redros2.jpg', 'redros.jpg', project.id, 'Rosa Liksom', 'utsproj/rosor/')
-                                +lightboximg('rosaalba2.jpg', 'rosaalba.jpg', project.id, 'Rosa Alba', 'utsproj/rosor/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('rosabor2.jpg', 'rosabort.jpg', project.id, 'Rosa Bortom', 'utsproj/rosor/')
-                                +lightboximg('rosafor2.jpg', 'rosaforut.jpg', project.id, 'Rosa Förutom', 'utsproj/rosor/')
-                                +lightboximg('rosbarb2.jpg', 'rosbarb.jpg', project.id, 'Rose Barbara', 'utsproj/rosor/')
-                                +lightboximg('roscalpet2.jpg', 'roscalpet.jpg', project.id, 'Violetta Scalpetta', 'utsproj/rosor/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('roselect2.jpg', 'roselect.jpg', project.id, 'Rosa Electra', 'utsproj/rosor/')
-                                +lightboximg('roshit2.jpg', 'roshitom.jpg', project.id, 'Rosa Hitom', 'utsproj/rosor/')
-                                +lightboximg('rosros2.jpg', 'rosrosa.jpg', project.id, 'Rosa Rosa', 'utsproj/rosor/')
-                                +lightboximg('rosvelv2.jpg', 'rosvelvet.jpg', project.id, 'Rosa Velvet', 'utsproj/rosor/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('rosvendet2.jpg', 'rosvendett.jpg', project.id, 'Rosa Vendetta', 'utsproj/rosor/')
-                                +lightboximg('rosveron2.jpg', 'rosverona.jpg', project.id, 'Rosa Verona', 'utsproj/rosor/')
-                                +lightboximg('rosvirgin2.jpg', 'rosvirgina.jpg', project.id, 'Rosa Virgina', 'utsproj/rosor/')
-                                +lightboximg('waldrem2.jpg', 'wallandream.jpg', project.id, 'Wallanders Dröm', 'utsproj/rosor/')
-                        h3 Clowner
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('bal1typ2.jpg', 'bal1typ.jpg', project.id, 'Balans 1', 'utsproj/clowner/')
-                                +lightboximg('balans22.jpg', 'balans22.jpg', project.id, 'Balans 2', 'utsproj/clowner/')
-                                +lightboximg('balans32.jpg', 'balans3.jpg', project.id, 'Balans 3', 'utsproj/clowner/')
-                        .row.py-2
-                            .container.text-center
-                                +lightboximg('balans42.jpg', 'balans4.jpg', project.id, 'Balans 4', 'utsproj/clowner/')
-                                +lightboximg('balans52.jpg', 'balans5.jpg', project.id, 'Balans 5', 'utsproj/clowner/')
-                                +lightboximg('balans62.jpg', 'balans6.jpg', project.id, 'Balans 6', 'utsproj/clowner/')
+            .row.py-2
+              .container.text-center
+                //- +lightboximg('kvinnaweb.jpg', 'kvinnaweb.jpg', project.id, 'Kvinna', 'utsproj/fotoatelje/')
+                //- +lightboximg('manweb.jpg', 'manweb.jpg', project.id, 'Man', 'utsproj/fotoatelje/')
+                //- +lightboximg('uteateljeweb.jpg', 'uteatelje_stor.jpg', project.id, 'Uteteljé', 'utsproj/fotoatelje/')
+            .row.py-2
+              .container.text-center
+                //- +lightboximg('utst1web.jpg', 'utst1web.jpg', project.id, 'Utställningen', 'utsproj/fotoatelje/')
+                //- +lightboximg('utst2web.jpg', 'utst2_stor.jpg', project.id, 'Utställningen', 'utsproj/fotoatelje/')
+          when 'och2000'
+            p Sommaren 2000 genomförde 
+              a(target='_blank' href='http://www.kim.konstdesign.nu/') Kim Stenlund 
+              | och jag en utställning på Norrbyskär. Kim visade smycken och textila bilder medan jag visade akvareller, digitaliserade akvareller och akvarelliserade digitaler med rosor och clownen.
+            h3 Rosor
+            //- .row.py-2
+            //-   .container.text-center
+            //-     +lightboximg('amoros2.jpg', 'amorosa.jpg', project.id, 'Amorosa', 'utsproj/rosor/')
+            //-     +lightboximg('barblik2.jpg', 'barbarlik.jpg', project.id, 'Barbara Liksom', 'utsproj/rosor/')
+            //-     +lightboximg('beckask2.jpg', 'beckoaska.jpg', project.id, 'Beck & Aska', 'utsproj/rosor/')
+            //-     +lightboximg('mifigl2.jpg', 'miafigl.jpg', project.id, 'Mia Figlia', 'utsproj/rosor/')
+            //- .row.py-2
+            //-   .container.text-center
+            //-     +lightboximg('minetros2.jpg', 'minetroset.jpg', project.id, 'Minetta Rosetta', 'utsproj/rosor/')
+            //-     +lightboximg('nattdrot2.jpg', 'nattdrottn.jpg', project.id, 'Nattens Drottning', 'utsproj/rosor/')
+            //-     +lightboximg('redros2.jpg', 'redros.jpg', project.id, 'Rosa Liksom', 'utsproj/rosor/')
+            //-     +lightboximg('rosaalba2.jpg', 'rosaalba.jpg', project.id, 'Rosa Alba', 'utsproj/rosor/')
+            //- .row.py-2
+            //-   .container.text-center
+            //-     +lightboximg('rosabor2.jpg', 'rosabort.jpg', project.id, 'Rosa Bortom', 'utsproj/rosor/')
+            //-     +lightboximg('rosafor2.jpg', 'rosaforut.jpg', project.id, 'Rosa Förutom', 'utsproj/rosor/')
+            //-     +lightboximg('rosbarb2.jpg', 'rosbarb.jpg', project.id, 'Rose Barbara', 'utsproj/rosor/')
+            //-     +lightboximg('roscalpet2.jpg', 'roscalpet.jpg', project.id, 'Violetta Scalpetta', 'utsproj/rosor/')
+            //- .row.py-2
+            //-   .container.text-center
+            //-     +lightboximg('roselect2.jpg', 'roselect.jpg', project.id, 'Rosa Electra', 'utsproj/rosor/')
+            //-     +lightboximg('roshit2.jpg', 'roshitom.jpg', project.id, 'Rosa Hitom', 'utsproj/rosor/')
+            //-     +lightboximg('rosros2.jpg', 'rosrosa.jpg', project.id, 'Rosa Rosa', 'utsproj/rosor/')
+            //-     +lightboximg('rosvelv2.jpg', 'rosvelvet.jpg', project.id, 'Rosa Velvet', 'utsproj/rosor/')
+            //- .row.py-2
+            //-   .container.text-center
+            //-     +lightboximg('rosvendet2.jpg', 'rosvendett.jpg', project.id, 'Rosa Vendetta', 'utsproj/rosor/')
+            //-     +lightboximg('rosveron2.jpg', 'rosverona.jpg', project.id, 'Rosa Verona', 'utsproj/rosor/')
+            //-     +lightboximg('rosvirgin2.jpg', 'rosvirgina.jpg', project.id, 'Rosa Virgina', 'utsproj/rosor/')
+            //-     +lightboximg('waldrem2.jpg', 'wallandream.jpg', project.id, 'Wallanders Dröm', 'utsproj/rosor/')
+            //- h3 Clowner
+            //- .row.py-2
+            //-   .container.text-center
+            //-     +lightboximg('bal1typ2.jpg', 'bal1typ.jpg', project.id, 'Balans 1', 'utsproj/clowner/')
+            //-     +lightboximg('balans22.jpg', 'balans22.jpg', project.id, 'Balans 2', 'utsproj/clowner/')
+            //-     +lightboximg('balans32.jpg', 'balans3.jpg', project.id, 'Balans 3', 'utsproj/clowner/')
+            //- .row.py-2
+            //-   .container.text-center
+            //-     +lightboximg('balans42.jpg', 'balans4.jpg', project.id, 'Balans 4', 'utsproj/clowner/')
+            //-     +lightboximg('balans52.jpg', 'balans5.jpg', project.id, 'Balans 5', 'utsproj/clowner/')
+            //-     +lightboximg('balans62.jpg', 'balans6.jpg', project.id, 'Balans 6', 'utsproj/clowner/')
+
+    +lightbox(
+      'transit2013',
+      ['show1_stor.jpg', 'show2_stor.jpg', 'kur_stor.jpg', 'kur2_stor.jpg', 'kur3_stor.jpg'],
+      ['Från utställningen på restaurang Kajen',
+      'Från utställningen på restaurang Kajen',
+      'Väntkuren på Köpmanholmens kaj, exteriör',
+      'Väntkuren på Köpmanholmens kaj, exteriör',
+      'Väntkuren på Köpmanholmens kaj, exteriör'],
+      'utsproj/transit/')
