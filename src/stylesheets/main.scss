@@ -1,9 +1,15 @@
-@import "_palette.scss";
-@import url('https://fonts.googleapis.com/css?family=Hind+Madurai|Lora|Montserrat');
+$font: 'News Cycle', sans-serif;
 
-$header : 'Montserrat', sans-serif;
-$lead : 'Lora', serif;
-$copy : 'Hind Madurai', sans-serif;
+:root {
+    --color-primary: #428bca;
+    --color-primary-darker: #2a6496;
+    --color-dark: #121212;
+    --color-light: #f8f4ed;
+    --color-grey: #f5f5f5;
+
+
+
+}
 
 html {
     scroll-behavior: smooth;
