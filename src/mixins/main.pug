@@ -1,5 +1,5 @@
 mixin navlink(href, text)
-  li.nav-item
+  li.nav-item.head
     if text == title
       a.nav-link.active(href=href)= text
     else
@@ -78,7 +78,7 @@ mixin sitelead(hide)
       p.lead(itemscope itemtype='http://schema.org/Person') Född 
         span(itemprop='birthDate') 1952 
         | i Stockholm, bosatt i 
-        span(itemprop='homeLocation') Umeå
+        span(itemprop='homeLocation') Köpmanholmen
         | . Verksam som 
         span(itemprop='jobTitle') konstnär och illustratör 
         | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 
@@ -89,7 +89,7 @@ mixin sitelead(hide)
       p.lead(itemscope itemtype='http://schema.org/Person') Född 
         span(itemprop='birthDate') 1952 
         | i Stockholm, bosatt i 
-        span(itemprop='homeLocation') Umeå
+        span(itemprop='homeLocation') Köpmanholmen
         | . Verksam som 
         span(itemprop='jobTitle') konstnär och illustratör 
         | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 

@@ -1,8 +1,8 @@
 :root {
   --color-primary: 68, 140, 202;
   --color-primary-darker: 42, 100, 150;
-  --color-dark: 18, 18, 18;
-  --color-light: 248, 244, 237;
+  --color-dark: 33, 37, 41;
+  --color-light: 248, 249, 250;
 }
 
 html {
@@ -28,6 +28,7 @@ h1, h2, h3 {
   font-family: "News Cycle", sans-serif;
   font-variant-numeric: lining-nums;
   font-weight: 700;
+  letter-spacing: 0.1rem;
 }
 
 h2 {
@@ -88,7 +89,7 @@ a:focus {
 
 .navbar-brand {
   font-size: 2.6rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.2rem;
 }
 .navbar-brand a {
@@ -111,6 +112,11 @@ a:focus {
 }
 #sidenav time {
   letter-spacing: 0.08rem;
+}
+
+.head {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
 }
 
 /* main */
@@ -137,6 +143,7 @@ a:focus {
   background-color: inherit;
 }
 
+/* footer */
 .btop {
   position: fixed;
   bottom: 20px;

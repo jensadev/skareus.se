@@ -3,8 +3,9 @@ $font: 'News Cycle', sans-serif;
 :root {
     --color-primary: 68, 140, 202;
     --color-primary-darker: 42, 100, 150;
-    --color-dark: 18, 18, 18;
-    --color-light: 248, 244, 237;
+    --color-dark: 33, 37, 41;
+    // --color-light: 248, 244, 237;
+    --color-light: 248, 249, 250;
 }
 
 html {
@@ -29,6 +30,7 @@ h1, h2, h3 {
     font-family: $font;
     font-variant-numeric: lining-nums;
     font-weight: 700;
+    letter-spacing: .1rem;
 }
 
 h2 {
@@ -69,8 +71,6 @@ a {
 }
 
 /* Nav */
-
-
 .nav-item {
     line-height: 1.2;
     .active {
@@ -80,7 +80,6 @@ a {
 
 .navbar-custom {
     padding-left: 0rem;
-
     .nav-item {
         font-size: 1.6rem;
         padding-left: 0rem;
@@ -89,9 +88,10 @@ a {
         padding-left: 0rem;
     }
 }
+
 .navbar-brand {    
     font-size: 2.6rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.2rem;
     a {
         text-decoration: none;
@@ -120,8 +120,12 @@ a {
     }
 }
 
-/* main */
+.head {
+    font-weight: 700;
+    letter-spacing: .1rem;
+}
 
+/* main */
 .books {
     ul {
         list-style: none;
@@ -147,6 +151,7 @@ a {
     background-color: inherit;
 }
 
+/* footer */
 .btop {
     position: fixed;
     bottom: 20px;

@@ -1,16 +1,16 @@
 include mixins/main
 
 block nav
-    - var links = []
-    - links.push({href: 'project.html', text: 'Utställningar och projekt'})
-    - links.push({href: 'posters.html', text: 'Affischer'})
-    - links.push({href: 'books.html', text: 'Böcker'})
-    - links.push({href: 'cv.html', text: 'CV'})   
+  - var links = []
+  - links.push({href: 'project.html', text: 'Utställningar och projekt'})
+  - links.push({href: 'posters.html', text: 'Affischer'})
+  - links.push({href: 'books.html', text: 'Böcker'})
+  - links.push({href: 'cv.html', text: 'CV'})   
 
-    div.col-md-4.sticky-top
-        +sitelead()
-        nav.navbar-custom.navbar.navbar-expand-md.sticky-top
-            .collapse.navbar-collapse#navbar
-                ul.nav.flex-column
-                    each link in links
-                        +navlink(link.href, link.text)
+  div.col-md-4.sticky-top
+    +sitelead()
+    nav.navbar-custom.navbar.navbar-expand-md.sticky-top
+      #navbar.collapse.navbar-collapse
+        ul.nav.flex-column
+          each link in links
+            +navlink(link.href, link.text)
