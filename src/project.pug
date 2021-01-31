@@ -49,12 +49,35 @@ block content
               | sal väster om Arkivsalen. Samtliga träd kunde inhandlas och 
               | planteras tack vare gåvor från privatpersoner och några lokala 
               | företag. Fotografiet är från en dimmig höstdag 2020.
+            .row.py-2
+              .container.text-center
+                img.img-fluid.rounded(src='images/utsproj/1.jpeg' alt='Prydnadsapelallé')
           when 'samling2019'
-            p leder till kort text och artikel (pdf) om utställningen (ÖA)
+            p Tillsammans med Bill Olson arrangerade jag en kortare sommarutställning 2019 i Tvättstugan i Köpmanholmen.
+            p Läs mer om utställningen 
+              a(href="pdf/2.pdf") här
+              | .
           when 'arkivsalen2018'
-            p länk till fabriksträdgårdens sida om Arkivsalen (ska öppnas i egen flik)
+            p SKRIV ETT INTRO 
+            p
+              a(href="http://blog.skareus.se/arkivsalen/" title="Arkivsalen" target="_blank") Arkivsalen
+              | .
           when 'konst2016'
-            p kort text + 6 bilder samt tidningsartikel pdf. 
+            p Samlingsutställningen ”Det hänger på konsten” arrangerades av 
+              | Bill Olson i Tvättstugan i Köpmanholmen. Medverkande konstnärer 
+              | var Bill Olson, Lars Ahlström, Anna Kristensen, Nic Langendoen och Eva Skåreus.
+              | Bild 5 och 6 av Eva Skåreus, digital print + akvarell.
+            p Läs mer om utställningen 
+              a(href="pdf/art4oa.pdf") här
+              | .
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('4_1.jpg',  project.id, 0, 'Det hänger på konsten', 'utsproj/')
+                +lightboxlink('4_2.jpg',  project.id, 0, 'Det hänger på konsten', 'utsproj/')
+                +lightboxlink('4_3.jpg',  project.id, 0, 'Det hänger på konsten', 'utsproj/')
+                +lightboxlink('4_4.jpg',  project.id, 0, 'Det hänger på konsten', 'utsproj/')
+                +lightboxlink('4_5.jpg',  project.id, 0, 'Det hänger på konsten', 'utsproj/')
+                +lightboxlink('4_6.jpg',  project.id, 0, 'Det hänger på konsten', 'utsproj/')
           when 'fabriksträdgården2015'
             .row.py-2
               .container.text-center
@@ -86,8 +109,6 @@ block content
               .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('show1web.jpg',  project.id, 0, 'Från utställningen på restaurang Kajen', 'utsproj/transit/')
                 +lightboxlink('show2web.jpg',  project.id, 1, 'Från utställningen på restaurang Kajen', 'utsproj/transit/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('kurweb.jpg', project.id, 2, 'Väntkuren på Köpmanholmens kaj, exteriör', 'utsproj/transit/')
                 +lightboxlink('kur2web.jpg', project.id, 3, 'Väntkuren på Köpmanholmens kaj, interiör', 'utsproj/transit/')
                 +lightboxlink('kur3web.jpg', project.id, 4, 'Väntkuren på Köpmanholmens kaj, interiör', 'utsproj/transit/')
@@ -103,13 +124,9 @@ block content
                 +lightboxlink('heartskissweb.jpg', project.id, 0, 'Skiss av hjärtat', 'utsproj/heart/')
                 +lightboxlink('heart2web.jpg', project.id, 1, 'Hjärtat i september, lite från ovan', 'utsproj/heart/')
                 +lightboxlink('heart1web.jpg', project.id, 2, 'Planteringen med utsikt mot fjärden', 'utsproj/heart/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('plant1web.jpg', project.id, 3, 'Första planteringsdagen', 'utsproj/heart/')
                 +lightboxlink('plant2web.jpg', project.id, 4, 'Första planteringsdagen', 'utsproj/heart/')
                 +lightboxlink('plant3web.jpg', project.id, 5, 'Första planteringsdagen', 'utsproj/heart/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('rosweb.jpg', project.id, 6, 'Solrosorna och hjärtat', 'utsproj/heart/')
           when 'foto2009'
             p
@@ -149,26 +166,18 @@ block content
                 +lightboxlink('barblik2.jpg',    project.id, 1, 'Barbara Liksom',  'utsproj/rosor/')
                 +lightboxlink('beckask2.jpg',    project.id, 2, 'Beck & Aska',  'utsproj/rosor/')
                 +lightboxlink('mifigl2.jpg',     project.id, 3, 'Mia Figlia', 'utsproj/rosor/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('minetros2.jpg',   project.id, 4, 'Minetta Rosetta',     'utsproj/rosor/')
                 +lightboxlink('nattdrot2.jpg',   project.id, 5, 'Nattens Drottning',   'utsproj/rosor/')
                 +lightboxlink('redros2.jpg',     project.id, 6, 'Rosa Liksom',         'utsproj/rosor/')
                 +lightboxlink('rosaalba2.jpg',   project.id, 7, 'Rosa Alba',           'utsproj/rosor/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('rosabor2.jpg',     project.id, 8, 'Rosa Bortom',        'utsproj/rosor/')
                 +lightboxlink('rosafor2.jpg',     project.id, 9, 'Rosa Förutom',       'utsproj/rosor/')
                 +lightboxlink('rosbarb2.jpg',     project.id, 10, 'Rose Barbara',       'utsproj/rosor/')
                 +lightboxlink('roscalpet2.jpg',   project.id, 11, 'Violetta Scalpetta', 'utsproj/rosor/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('roselect2.jpg',    project.id, 12, 'Rosa Electra',   'utsproj/rosor/')
                 +lightboxlink('roshit2.jpg',      project.id, 13, 'Rosa Hitom',     'utsproj/rosor/')
                 +lightboxlink('rosros2.jpg',      project.id, 14, 'Rosa Rosa',      'utsproj/rosor/')
                 +lightboxlink('rosvelv2.jpg',     project.id, 15, 'Rosa Velvet',    'utsproj/rosor/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
                 +lightboxlink('rosvendet2.jpg',     project.id, 16, 'Rosa Vendetta',    'utsproj/rosor/')
                 +lightboxlink('rosveron2.jpg',      project.id, 17, 'Rosa Verona',      'utsproj/rosor/')
                 +lightboxlink('rosvirgin2.jpg',     project.id, 18, 'Rosa Virgina',     'utsproj/rosor/')
@@ -179,8 +188,6 @@ block content
                 +lightboxlink('bal1typ2.jpg',  project.id + 'clown', 0, 'Balans 1', 'utsproj/clowner/')
                 +lightboxlink('balans22.jpg',  project.id + 'clown', 1, 'Balans 2', 'utsproj/clowner/')
                 +lightboxlink('balans32.jpg',  project.id + 'clown', 2, 'Balans 3', 'utsproj/clowner/')
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'clownModal' data-bs-toggle='modal')
                 +lightboxlink('balans42.jpg',  project.id + 'clown', 3, 'Balans 4', 'utsproj/clowner/')
                 +lightboxlink('balans52.jpg',  project.id + 'clown', 4, 'Balans 5', 'utsproj/clowner/')
                 +lightboxlink('balans62.jpg',  project.id + 'clown', 5, 'Balans 6', 'utsproj/clowner/')
@@ -392,6 +399,36 @@ block content
         }
       ],
       'utsproj/clowner/'
+    )
+    +lightbox(
+      'konst2016',
+      [
+        {
+          img:'4_1.jpg',
+          alt: 'Det hänger på konsten'
+        },
+        {
+          img:'4_2.jpg',
+          alt: 'Det hänger på konsten'
+        },
+        {
+          img:'4_3.jpg',
+          alt: 'Det hänger på konsten'
+        },
+        {
+          img:'4_4.jpg',
+          alt: 'Det hänger på konsten'
+        },
+        {
+          img:'4_5.jpg',
+          alt: 'Det hänger på konsten'
+        },
+        {
+          img:'4_6.jpg',
+          alt: 'Det hänger på konsten'
+        }
+      ],
+      'utsproj/'
     )
 
 
