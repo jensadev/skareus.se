@@ -96,89 +96,329 @@ block content
             p Tankarna bakom projektet var att uppmärksamma industriområdet genom ett platsspecifikt konstverk och därigenom skapa någon form av återupprättelse, att göra platsen synligt igen, men på ett annat sätt än tidigare. Fram till mitten av 1980-talet var området tätt bebyggt med hus och industribyggnader som tillhörde bruket. Sedan revs allt och idag är det ett ingemansland, tomt och övergivet. För gamla Köpmanholmsbor verkar området mer eller mindre som en spökby, ”där stod cisternerna och där var förmansbostaden, Konsum 1:an och huggeriet”, medan för besökaren utan historisk förankring är det en flack slätt med utsikt över fjärden. Men det är också Köpmanholmens gamla hjärta, den plats där arbetet låg och den plats som utgjorde motorn i samhällsbygget.
             p Projektet genomfördes med stöd från Nätterlundsstiftelsen, MIVA och Bjästa Handelsträdgård.
             .row.py-2
-              .container.text-center
-                //- +lightboximg('heartskissweb.jpg', 'heartskiss_stor.jpg', project.id, 'Skiss av hjärtat', 'utsproj/heart/')
-                //- +lightboximg('heart2web.jpg', 'heart2_stor.jpg', project.id, 'Hjärtat i september, lite från ovan', 'utsproj/heart/')
-                //- +lightboximg('heart1web.jpg', 'heart1_stor.jpg', project.id, 'Planteringen med utsikt mot fjärden', 'utsproj/heart/')
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('heartskissweb.jpg', project.id, 0, 'Skiss av hjärtat', 'utsproj/heart/')
+                +lightboxlink('heart2web.jpg', project.id, 1, 'Hjärtat i september, lite från ovan', 'utsproj/heart/')
+                +lightboxlink('heart1web.jpg', project.id, 2, 'Planteringen med utsikt mot fjärden', 'utsproj/heart/')
             .row.py-2
-              .container.text-center
-                //- +lightboximg('plant1web.jpg', 'plant1_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
-                //- +lightboximg('plant2web.jpg', 'plant2_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
-                //- +lightboximg('plant3web.jpg', 'plant3_stor.jpg', project.id, 'Första planteringsdagen', 'utsproj/heart/')
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('plant1web.jpg', project.id, 3, 'Första planteringsdagen', 'utsproj/heart/')
+                +lightboxlink('plant2web.jpg', project.id, 4, 'Första planteringsdagen', 'utsproj/heart/')
+                +lightboxlink('plant3web.jpg', project.id, 5, 'Första planteringsdagen', 'utsproj/heart/')
             .row.py-2
-              .container.text-center
-                //- +lightboximg('rosweb.jpg', 'ros_stor.jpg', project.id, 'Solrosorna och hjärtat', 'utsproj/heart/')
-                //- +lightboximg('heart3web.jpg', 'heart3_stor.jpg', project.id, 'Bild av hjärtat', 'utsproj/heart/')
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('rosweb.jpg', project.id, 6, 'Solrosorna och hjärtat', 'utsproj/heart/')
           when 'foto2009'
-            p Under 2009 fyllde den gamla fotografiateljén i Köpmanholmen 80 år. För att fira det bjöd jag in Holmenborna under fyra dagar i juli till en friluftsateljé i trädgården. En stol, en innerdörr och trädgårdens grönska utgjorde ateljé, som en replik av dåtida fotografiateljéers målade fondväggar av grönska och balustrader samt en obligatorisk stol framför. Inbjudan resulterade i 53 fotografier som visades på restaurangen Kajen.
+            p
+              | Under 2009 fyllde den gamla fotografiateljén i Köpmanholmen 80 år. 
+              | För att fira det bjöd jag in Holmenborna under fyra dagar i juli 
+              | till en friluftsateljé i trädgården. En stol, en innerdörr och 
+              | trädgårdens grönska utgjorde ateljé, som en replik av dåtida 
+              | fotografiateljéers målade fondväggar av grönska och balustrader 
+              | samt en obligatorisk stol framför. Inbjudan resulterade i 53 
+              | fotografier som visades på restaurangen Kajen.
             ul
               li
-                a(target='_blank' href='eva/info_proj.pdf' title='Länk till PDF dokument om projektet') PDF om projektet Fotografateljé
+                a(target='_blank' href='eva/info_proj.pdf' title='Länk till PDF dokument om projektet')
+                  | PDF om projektet Fotografateljé
               li
-                a(target='_blank' href='eva/artikel-allehanda.se.pdf' title='Artikel från allehanda.se i PDF format') En gammal fotoateljé återuppstår - Artiklar - allehanda.se
-
+                a(target='_blank' href='eva/artikel-allehanda.se.pdf' title='Artikel från allehanda.se i PDF format')
+                  | En gammal fotoateljé återuppstår - Artiklar - allehanda.se
             .row.py-2
-              .container.text-center
-                //- +lightboximg('kvinnaweb.jpg', 'kvinnaweb.jpg', project.id, 'Kvinna', 'utsproj/fotoatelje/')
-                //- +lightboximg('manweb.jpg', 'manweb.jpg', project.id, 'Man', 'utsproj/fotoatelje/')
-                //- +lightboximg('uteateljeweb.jpg', 'uteatelje_stor.jpg', project.id, 'Uteteljé', 'utsproj/fotoatelje/')
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('kvinnaweb.jpg', project.id, 0, 'Kvinna', 'utsproj/fotoatelje/')
+                +lightboxlink('manweb.jpg', project.id, 1, 'Man', 'utsproj/fotoatelje/')
+                +lightboxlink('uteateljeweb.jpg', project.id, 2, 'Uteteljé', 'utsproj/fotoatelje/')
             .row.py-2
-              .container.text-center
-                //- +lightboximg('utst1web.jpg', 'utst1web.jpg', project.id, 'Utställningen', 'utsproj/fotoatelje/')
-                //- +lightboximg('utst2web.jpg', 'utst2_stor.jpg', project.id, 'Utställningen', 'utsproj/fotoatelje/')
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('utst1web.jpg', project.id, 3, 'Utställningen', 'utsproj/fotoatelje/')
+                +lightboxlink('utst2web.jpg', project.id, 4, 'Utställningen', 'utsproj/fotoatelje/')
           when 'och2000'
             p Sommaren 2000 genomförde 
               a(target='_blank' href='http://www.kim.konstdesign.nu/') Kim Stenlund 
-              | och jag en utställning på Norrbyskär. Kim visade smycken och textila bilder medan jag visade akvareller, digitaliserade akvareller och akvarelliserade digitaler med rosor och clownen.
+              | och jag en utställning på Norrbyskär. Kim visade smycken och 
+              | textila bilder medan jag visade akvareller, digitaliserade 
+              | akvareller och akvarelliserade digitaler med rosor och clownen.
             h3 Rosor
-            //- .row.py-2
-            //-   .container.text-center
-            //-     +lightboximg('amoros2.jpg', 'amorosa.jpg', project.id, 'Amorosa', 'utsproj/rosor/')
-            //-     +lightboximg('barblik2.jpg', 'barbarlik.jpg', project.id, 'Barbara Liksom', 'utsproj/rosor/')
-            //-     +lightboximg('beckask2.jpg', 'beckoaska.jpg', project.id, 'Beck & Aska', 'utsproj/rosor/')
-            //-     +lightboximg('mifigl2.jpg', 'miafigl.jpg', project.id, 'Mia Figlia', 'utsproj/rosor/')
-            //- .row.py-2
-            //-   .container.text-center
-            //-     +lightboximg('minetros2.jpg', 'minetroset.jpg', project.id, 'Minetta Rosetta', 'utsproj/rosor/')
-            //-     +lightboximg('nattdrot2.jpg', 'nattdrottn.jpg', project.id, 'Nattens Drottning', 'utsproj/rosor/')
-            //-     +lightboximg('redros2.jpg', 'redros.jpg', project.id, 'Rosa Liksom', 'utsproj/rosor/')
-            //-     +lightboximg('rosaalba2.jpg', 'rosaalba.jpg', project.id, 'Rosa Alba', 'utsproj/rosor/')
-            //- .row.py-2
-            //-   .container.text-center
-            //-     +lightboximg('rosabor2.jpg', 'rosabort.jpg', project.id, 'Rosa Bortom', 'utsproj/rosor/')
-            //-     +lightboximg('rosafor2.jpg', 'rosaforut.jpg', project.id, 'Rosa Förutom', 'utsproj/rosor/')
-            //-     +lightboximg('rosbarb2.jpg', 'rosbarb.jpg', project.id, 'Rose Barbara', 'utsproj/rosor/')
-            //-     +lightboximg('roscalpet2.jpg', 'roscalpet.jpg', project.id, 'Violetta Scalpetta', 'utsproj/rosor/')
-            //- .row.py-2
-            //-   .container.text-center
-            //-     +lightboximg('roselect2.jpg', 'roselect.jpg', project.id, 'Rosa Electra', 'utsproj/rosor/')
-            //-     +lightboximg('roshit2.jpg', 'roshitom.jpg', project.id, 'Rosa Hitom', 'utsproj/rosor/')
-            //-     +lightboximg('rosros2.jpg', 'rosrosa.jpg', project.id, 'Rosa Rosa', 'utsproj/rosor/')
-            //-     +lightboximg('rosvelv2.jpg', 'rosvelvet.jpg', project.id, 'Rosa Velvet', 'utsproj/rosor/')
-            //- .row.py-2
-            //-   .container.text-center
-            //-     +lightboximg('rosvendet2.jpg', 'rosvendett.jpg', project.id, 'Rosa Vendetta', 'utsproj/rosor/')
-            //-     +lightboximg('rosveron2.jpg', 'rosverona.jpg', project.id, 'Rosa Verona', 'utsproj/rosor/')
-            //-     +lightboximg('rosvirgin2.jpg', 'rosvirgina.jpg', project.id, 'Rosa Virgina', 'utsproj/rosor/')
-            //-     +lightboximg('waldrem2.jpg', 'wallandream.jpg', project.id, 'Wallanders Dröm', 'utsproj/rosor/')
-            //- h3 Clowner
-            //- .row.py-2
-            //-   .container.text-center
-            //-     +lightboximg('bal1typ2.jpg', 'bal1typ.jpg', project.id, 'Balans 1', 'utsproj/clowner/')
-            //-     +lightboximg('balans22.jpg', 'balans22.jpg', project.id, 'Balans 2', 'utsproj/clowner/')
-            //-     +lightboximg('balans32.jpg', 'balans3.jpg', project.id, 'Balans 3', 'utsproj/clowner/')
-            //- .row.py-2
-            //-   .container.text-center
-            //-     +lightboximg('balans42.jpg', 'balans4.jpg', project.id, 'Balans 4', 'utsproj/clowner/')
-            //-     +lightboximg('balans52.jpg', 'balans5.jpg', project.id, 'Balans 5', 'utsproj/clowner/')
-            //-     +lightboximg('balans62.jpg', 'balans6.jpg', project.id, 'Balans 6', 'utsproj/clowner/')
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('amoros2.jpg',     project.id, 0, 'Amorosa',  'utsproj/rosor/')
+                +lightboxlink('barblik2.jpg',    project.id, 1, 'Barbara Liksom',  'utsproj/rosor/')
+                +lightboxlink('beckask2.jpg',    project.id, 2, 'Beck & Aska',  'utsproj/rosor/')
+                +lightboxlink('mifigl2.jpg',     project.id, 3, 'Mia Figlia', 'utsproj/rosor/')
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('minetros2.jpg',   project.id, 4, 'Minetta Rosetta',     'utsproj/rosor/')
+                +lightboxlink('nattdrot2.jpg',   project.id, 5, 'Nattens Drottning',   'utsproj/rosor/')
+                +lightboxlink('redros2.jpg',     project.id, 6, 'Rosa Liksom',         'utsproj/rosor/')
+                +lightboxlink('rosaalba2.jpg',   project.id, 7, 'Rosa Alba',           'utsproj/rosor/')
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('rosabor2.jpg',     project.id, 8, 'Rosa Bortom',        'utsproj/rosor/')
+                +lightboxlink('rosafor2.jpg',     project.id, 9, 'Rosa Förutom',       'utsproj/rosor/')
+                +lightboxlink('rosbarb2.jpg',     project.id, 10, 'Rose Barbara',       'utsproj/rosor/')
+                +lightboxlink('roscalpet2.jpg',   project.id, 11, 'Violetta Scalpetta', 'utsproj/rosor/')
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('roselect2.jpg',    project.id, 12, 'Rosa Electra',   'utsproj/rosor/')
+                +lightboxlink('roshit2.jpg',      project.id, 13, 'Rosa Hitom',     'utsproj/rosor/')
+                +lightboxlink('rosros2.jpg',      project.id, 14, 'Rosa Rosa',      'utsproj/rosor/')
+                +lightboxlink('rosvelv2.jpg',     project.id, 15, 'Rosa Velvet',    'utsproj/rosor/')
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
+                +lightboxlink('rosvendet2.jpg',     project.id, 16, 'Rosa Vendetta',    'utsproj/rosor/')
+                +lightboxlink('rosveron2.jpg',      project.id, 17, 'Rosa Verona',      'utsproj/rosor/')
+                +lightboxlink('rosvirgin2.jpg',     project.id, 18, 'Rosa Virgina',     'utsproj/rosor/')
+                +lightboxlink('waldrem2.jpg',       project.id, 19, 'Wallanders Dröm',  'utsproj/rosor/')
+            h3 Clowner
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'clownModal' data-bs-toggle='modal')
+                +lightboxlink('bal1typ2.jpg',  project.id + 'clown', 0, 'Balans 1', 'utsproj/clowner/')
+                +lightboxlink('balans22.jpg',  project.id + 'clown', 1, 'Balans 2', 'utsproj/clowner/')
+                +lightboxlink('balans32.jpg',  project.id + 'clown', 2, 'Balans 3', 'utsproj/clowner/')
+            .row.py-2
+              .container.text-center(data-bs-target='#' + project.id + 'clownModal' data-bs-toggle='modal')
+                +lightboxlink('balans42.jpg',  project.id + 'clown', 3, 'Balans 4', 'utsproj/clowner/')
+                +lightboxlink('balans52.jpg',  project.id + 'clown', 4, 'Balans 5', 'utsproj/clowner/')
+                +lightboxlink('balans62.jpg',  project.id + 'clown', 5, 'Balans 6', 'utsproj/clowner/')
 
     +lightbox(
       'transit2013',
-      ['show1_stor.jpg', 'show2_stor.jpg', 'kur_stor.jpg', 'kur2_stor.jpg', 'kur3_stor.jpg'],
-      ['Från utställningen på restaurang Kajen',
-      'Från utställningen på restaurang Kajen',
-      'Väntkuren på Köpmanholmens kaj, exteriör',
-      'Väntkuren på Köpmanholmens kaj, exteriör',
-      'Väntkuren på Köpmanholmens kaj, exteriör'],
-      'utsproj/transit/')
+      [
+        {
+          img: 'show1_stor.jpg',
+          alt:  'Från utställningen på restaurang Kajen'
+        },
+        {
+          img: 'show2_stor.jpg',
+          alt: 'Från utställningen på restaurang Kajen'
+        },
+        {
+          img: 'kur_stor.jpg',
+          alt: 'Väntkuren på Köpmanholmens kaj, exteriör'
+        },
+        {
+          img: 'kur2_stor.jpg',
+          alt: 'Väntkuren på Köpmanholmens kaj, exteriör'
+        },
+        {
+          img: 'kur3_stor.jpg',
+          alt: 'Väntkuren på Köpmanholmens kaj, exteriör'
+        }
+      ],
+      'utsproj/transit/'
+    )
+
+    +lightbox(
+      'hjärtat2011',
+      [
+        {
+          img: 'heartskiss_stor.jpg',
+          alt: 'Skiss av hjärtat'
+        },
+        {
+          img: 'heart2_stor.jpg',
+          alt: 'Hjärtat i september, lite från ovan'
+        },
+        {
+          img: 'heart1_stor.jpg',
+          alt: 'Planteringen med utsikt mot fjärden'
+        },
+        {
+          img: 'plant1_stor.jpg',
+          alt: 'Första planteringsdagen'
+        },
+        {
+          img: 'plant2_stor.jpg',
+          alt: 'Första planteringsdagen'
+        },
+        {
+          img: 'plant3_stor.jpg',
+          alt: 'Första planteringsdagen'
+        },
+        {
+          img: 'ros_stor.jpg',
+          alt:  'Utställningen'
+        },
+        {
+          img: 'heart3_stor.jpg',
+          alt:  'Utställningen'
+        }
+      ],
+      'utsproj/heart/'
+    )
+
+    +lightbox(
+      'foto2009',
+      [
+        {
+          img: 'kvinnaweb.jpg',
+          alt: 'Kvinna'
+        },
+        {
+          img: 'manweb.jpg',
+          alt: 'Man'
+        },
+        {
+          img: 'uteatelje_stor.jpg',
+          alt: 'Uteteljé'
+        },
+        {
+          img: 'utst1web.jpg',
+          alt: 'Utställningen'
+        },
+        {
+          img: 'utst2_stor.jpg',
+          alt: 'Utställningen'
+        }
+      ],
+      'utsproj/fotoatelje/'
+    )
+    +lightbox(
+      'och2000',
+      [
+        {
+          img: 'amorosa.jpg',
+          alt: 'Amorosa'
+        },
+        {
+          img: 'barbarlik.jpg',
+          alt: 'Barbara Liksom'
+        },
+        {
+          img: 'beckoaska.jpg',
+          alt: 'Beck & Aska'
+        },
+        {
+          img: 'miafigl.jpg',
+          alt: 'Mia Figlia'
+        },
+        {
+          img: 'minetroset.jpg',
+          alt: 'Minetta Rosetta'
+        },
+        {
+          img: 'nattdrottn.jpg',
+          alt: 'Nattens Drottning'
+        },
+        {
+          img: 'redros.jpg',
+          alt: 'Rosa Liksom'
+        },
+        {
+          img: 'rosaalba.jpg',
+          alt: 'Rosa Alba'
+        },
+        {
+          img: 'rosabort.jpg',
+          alt: 'Rosa Bortom'
+        },
+        {
+          img: 'rosaforut.jpg',
+          alt: 'Rosa Förutom'
+        },
+        {
+          img: 'rosbarb.jpg',
+          alt: 'Rose Barbara'
+        },
+        {
+          img: 'roscalpet.jpg',
+          alt: 'Violetta Scalpetta'
+        },
+        {
+          img: 'roselect.jpg',
+          alt: 'Rosa Electra'
+        },
+        {
+          img: 'roshitom.jpg',
+          alt: 'Rosa Hitom'
+        },
+        {
+          img: 'rosrosa.jpg',
+          alt: 'Rosa Rosa'
+        },
+        {
+          img: 'rosvelvet.jpg',
+          alt: 'Rosa Velvet'
+        },
+        {
+          img: 'rosvendett.jpg',
+          alt: 'Rosa Vendetta'
+        },
+        {
+          img: 'rosverona.jpg',
+          alt: 'Rosa Verona'
+        },
+        {
+          img: 'rosvirgina.jpg',
+          alt: 'Rosa Virgina'
+        },
+        {
+          img: 'wallandream.jpg',
+          alt: 'Wallanders Dröm'
+        }
+      ],
+      'utsproj/rosor/'
+    )
+    +lightbox(
+      'och2000clown',
+      [
+        {
+          img: 'bal1typ.jpg',
+          alt: 'Balans 1'
+        },
+        {
+          img: 'balans22.jpg',
+          alt: 'Balans 2'
+        },
+        {
+          img: 'balans3.jpg',
+          alt: 'Balans 3'
+        },
+        {
+          img: 'balans4.jpg',
+          alt: 'Balans 4'
+        },
+        {
+          img: 'balans5.jpg',
+          alt: 'Balans 5'
+        },
+        {
+          img: 'balans6.jpg',
+          alt: 'Balans 6'
+        }
+      ],
+      'utsproj/clowner/'
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+  
+ 
+
+
+
+
+
+
+       
+
+
+
+
