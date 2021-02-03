@@ -141,6 +141,7 @@ a:focus {
   max-width: 220px;
   min-width: 120px;
   background-color: inherit;
+  border: none;
 }
 
 /* footer */
@@ -148,6 +149,10 @@ a:focus {
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+
+.modal-content {
+  width: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

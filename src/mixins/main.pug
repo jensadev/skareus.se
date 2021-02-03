@@ -23,54 +23,13 @@ mixin section(headline, title, date)
     if block
       block
 
-//- mixin lightboximg(thumb, large, gallery, alt='' folder='')
-//-     a.col-md.px-2(href='images/' + folder + large, data-toggle='lightbox' data-gallery=gallery)
-//-         img.img-fluid.rounded.img-thumbnail(src='images/' + folder + thumb alt=alt)
-
-//- button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#exampleModal')
-//-   | Launch demo modal
-
-mixin lightbox(project, items, folder='')
-  div.modal.fade(id=project + 'Modal' tabindex='-1' aria-labelledby=project aria-hidden='true')
-    .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
-      .modal-content
-        .modal-body
-          div.carousel.slide(id=project + 'Carousel' data-bs-ride='carousel')
-            .carousel-inner
-              each item, index in items
-                if index == 0
-                  .carousel-item.active
-                    img.d-block.w-100(
-                      src='images/' + folder + item.img
-                      alt=item.alt
-                    )
-                else
-                  .carousel-item
-                    img.d-block.w-100(
-                      src='images/' + folder + item.img
-                      alt=item.alt
-                    )
-
-            a.carousel-control-prev(
-              href='#' + project + 'Carousel'
-              role='button'
-              data-bs-slide='prev')
-              span.carousel-control-prev-icon(aria-hidden='true')
-              span.visually-hidden Previous
-            a.carousel-control-next(
-              href='#' + project + 'Carousel'
-              role='button'
-              data-bs-slide='next')
-              span.carousel-control-next-icon(aria-hidden='true')
-              span.visually-hidden Next
-
-
-mixin lightboxlink(thumb, project, image, alt='', folder='')
+mixin lightboxlink(thumb, image, alt='', folder='')
   img.img-fluid.rounded.img-thumbnail(
     src='images/' + folder + thumb
     alt=alt
-    data-bs-target='#' + project + 'Carousel'
-    data-bs-slide-to=image)
+    data-bs-target='#imageModal'
+    data-bs-toggle='modal'
+    data-image=folder + image)
 
 mixin sitelead(hide)
   if hide
@@ -82,7 +41,7 @@ mixin sitelead(hide)
         | . Verksam som 
         span(itemprop='jobTitle') konstnär och illustratör 
         | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 
-        a(href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
+        a(rel="noopener" href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
         | , Umeå universitet.
   else
     div
@@ -93,5 +52,5 @@ mixin sitelead(hide)
         | . Verksam som 
         span(itemprop='jobTitle') konstnär och illustratör 
         | sedan 1980. Disputerade i pedagogiskt arbete 2007 och har arbetat som docent vid 
-        a(href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
+        a(rel="noopener" href='https://www.umu.se/personal/eva-skareus/' title='Länk till www.umu.se' target='_blank') Institutionen för estetiska ämnen
         | , Umeå universitet.

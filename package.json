@@ -4,18 +4,18 @@
   "description": "Static page for skareus.se",
   "main": " ",
   "scripts": {
-    "test": " "
+    "css": "sass --watch src/stylesheets/main.scss:docs/stylesheets/main.css",
+    "html": "pug --watch  src -o docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JensAndreasson/skareus.se.git"
+    "url": "git+https://github.com/jensnti/skareus.se"
   },
   "author": "jensandreasson77@gmail.com",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JensAndreasson/skareus.se/issues"
+    "url": "https://github.com/jensnti/skareus.se"
   },
-  "homepage": "https://github.com/JensAndreasson/skareus.se#readme",
+  "homepage": "https://skareus.se",
   "dependencies": {
     "jstransformer-markdown-it": "^2.1.0"
   }

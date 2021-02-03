@@ -149,6 +149,7 @@ a {
     max-width: 220px;
     min-width: 120px;
     background-color: inherit;
+    border: none;
 }
 
 /* footer */
@@ -156,4 +157,8 @@ a {
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+.modal-content {
+    width: auto;
 }
