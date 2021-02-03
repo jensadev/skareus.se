@@ -142,6 +142,7 @@ a:focus {
   min-width: 120px;
   background-color: inherit;
   border: none;
+  cursor: pointer;
 }
 
 /* footer */
@@ -153,6 +154,7 @@ a:focus {
 
 .modal-content {
   width: auto;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

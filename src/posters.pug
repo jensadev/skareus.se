@@ -24,46 +24,18 @@ block content
     h1.display-4.pb-3 Affischer
     section
       p Några affischer producerade under 2000-talet för feministiska/genusvetenskapliga/litterära sammanhang i samarbete med genusvetare, universitetet och Café Pilgatan, samt den första affischen för Holmöns Visfestival från starten 1994.
-      .row.py-2
-        .container.text-center(data-bs-target='#affischerModal' data-bs-toggle='modal')
-          +lightboxlink('aff_emoweb.jpg', 'affischer', 0, 'Emotioner och skandinaviskt genus', 'affischer/')
-          +lightboxlink('aff_femweb.jpg', 'affischer', 1, 'Bild, Svenska feminister', 'affischer/')
-          +lightboxlink('aff_3web.jpg', 'affischer', 2, 'Genusforskare om aktuella samhällsfrågor', 'affischer/')
-      .row.py-2
-        .container.text-center(data-bs-target='#affischerModal' data-bs-toggle='modal')
-          +lightboxlink('aff_4web.jpg', 'affischer', 3, 'Kryckor som vinglar', 'affischer/')
-          +lightboxlink('aff_slideweb.jpg', 'affischer', 4, 'Kvinnliga författare', 'affischer/')
-      .row.py-2
-        .container.text-center(data-bs-target='#affischerModal' data-bs-toggle='modal')
-          +lightboxlink('holmon.jpg', 'affischer', 5, 'Holmöns visfestival', 'affischer/')
+      .d-flex.flex-sm-wrap.flex-column.flex-sm-row.justify-content-evenly.align-items-center
+          +lightboxlink('aff_emoweb.jpg', 'aff_emostor.jpg', 'Emotioner och skandinaviskt genus', 'affischer/')
+          +lightboxlink('aff_femweb.jpg', 'aff_femstor.jpg', 'Bild, Svenska feminister', 'affischer/')
+          +lightboxlink('aff_3web.jpg', 'aff_3stor.jpg', 'Genusforskare om aktuella samhällsfrågor', 'affischer/')
+          +lightboxlink('aff_4web.jpg', 'aff_4stor.jpg', 'Kryckor som vinglar', 'affischer/')
+          +lightboxlink('aff_slideweb.jpg', 'aff_slidestor.jpg', 'Kvinnliga författare', 'affischer/')
+          +lightboxlink('holmon.jpg', 'holmon.jpg', 'Holmöns visfestival', 'affischer/')
 
-    //- +lightbox(
-    //-   'affischer',
-    //-   [
-    //-     {
-    //-       img: 'aff_emostor.jpg',
-    //-       alt:  'Emotioner och skandinaviskt genus'
-    //-     },
-    //-     {
-    //-       img: 'aff_femstor.jpg',
-    //-       alt:  'Bild, Svenska feminister'
-    //-     },
-    //-     {
-    //-       img: 'aff_3stor.jpg',
-    //-       alt:  'Genusforskare om aktuella samhällsfrågor'
-    //-     },
-    //-     {
-    //-       img: 'aff_4stor.jpg',
-    //-       alt:  'Kryckor som vinglar'
-    //-     },
-    //-     {
-    //-       img: 'aff_slidestor.jpg',
-    //-       alt:  'Kvinnliga författare'
-    //-     },
-    //-     {
-    //-       img: 'holmon.jpg',
-    //-       alt:  'Holmöns visfestival'
-    //-     }
-    //-   ],
-    //-   'affischer/'
-    //- )
+    div.modal.fade(id='imageModal' tabindex='-1' aria-labelledby='imageModal' aria-hidden='true')
+      .modal-dialog.modal-dialog-centered.modal-dialog(data-bs-dismiss='modal' aria-label='Close')
+        .modal-content
+          .modal-body
+
+block scripts
+  script(src="javascript/loader.js")

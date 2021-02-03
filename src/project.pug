@@ -53,8 +53,8 @@ block content
               +lightboxlink('1_low.jpg', '1.jpeg', 'Prydnadsapelallé', 'utsproj/recent/')
           when 'samling2019'
             p Tillsammans med Bill Olson arrangerade jag en kortare sommarutställning 2019 i Tvättstugan i Köpmanholmen.
-            p Läs mer om utställningen 
-              a(href="pdf/2.pdf") här
+            p Läs mer om utställningen här, 
+              a(href="pdf/2.pdf" title="Tidningsartikel PDF") tidningsartikel i pdf format
               | .
           when 'arkivsalen2018'
             p Arkivsalen är den andra salen i Köpmanholmens fabriksträdgård, det 
@@ -70,8 +70,8 @@ block content
               | Bill Olson i Tvättstugan i Köpmanholmen. Medverkande konstnärer 
               | var Bill Olson, Lars Ahlström, Anna Kristensen, Nic Langendoen och Eva Skåreus.
               | Bild 5 och 6 av Eva Skåreus, digital print + akvarell.
-            p Läs mer om utställningen 
-              a(href="pdf/art4oa.pdf") här
+            p Läs mer om utställningen här, 
+              a(href="pdf/art4oa.pdf" title="Tidningsartikel ÖA, PDF") tidningsartikel från ÖA, pdf format
               | .
             .d-flex.flex-sm-wrap.flex-column.flex-sm-row.justify-content-evenly.align-items-center
               +lightboxlink('4_1_thumb.jpg', '4_1.jpg', 'Det hänger på konsten', 'utsproj/recent/')
@@ -156,40 +156,38 @@ block content
               | textila bilder medan jag visade akvareller, digitaliserade 
               | akvareller och akvarelliserade digitaler med rosor och clownen.
             h3 Rosor
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'Modal' data-bs-toggle='modal')
-                +lightboxlink('amoros2.jpg',     project.id, 0, 'Amorosa',  'utsproj/rosor/')
-                +lightboxlink('barblik2.jpg',    project.id, 1, 'Barbara Liksom',  'utsproj/rosor/')
-                +lightboxlink('beckask2.jpg',    project.id, 2, 'Beck & Aska',  'utsproj/rosor/')
-                +lightboxlink('mifigl2.jpg',     project.id, 3, 'Mia Figlia', 'utsproj/rosor/')
-                +lightboxlink('minetros2.jpg',   project.id, 4, 'Minetta Rosetta',     'utsproj/rosor/')
-                +lightboxlink('nattdrot2.jpg',   project.id, 5, 'Nattens Drottning',   'utsproj/rosor/')
-                +lightboxlink('redros2.jpg',     project.id, 6, 'Rosa Liksom',         'utsproj/rosor/')
-                +lightboxlink('rosaalba2.jpg',   project.id, 7, 'Rosa Alba',           'utsproj/rosor/')
-                +lightboxlink('rosabor2.jpg',     project.id, 8, 'Rosa Bortom',        'utsproj/rosor/')
-                +lightboxlink('rosafor2.jpg',     project.id, 9, 'Rosa Förutom',       'utsproj/rosor/')
-                +lightboxlink('rosbarb2.jpg',     project.id, 10, 'Rose Barbara',       'utsproj/rosor/')
-                +lightboxlink('roscalpet2.jpg',   project.id, 11, 'Violetta Scalpetta', 'utsproj/rosor/')
-                +lightboxlink('roselect2.jpg',    project.id, 12, 'Rosa Electra',   'utsproj/rosor/')
-                +lightboxlink('roshit2.jpg',      project.id, 13, 'Rosa Hitom',     'utsproj/rosor/')
-                +lightboxlink('rosros2.jpg',      project.id, 14, 'Rosa Rosa',      'utsproj/rosor/')
-                +lightboxlink('rosvelv2.jpg',     project.id, 15, 'Rosa Velvet',    'utsproj/rosor/')
-                +lightboxlink('rosvendet2.jpg',     project.id, 16, 'Rosa Vendetta',    'utsproj/rosor/')
-                +lightboxlink('rosveron2.jpg',      project.id, 17, 'Rosa Verona',      'utsproj/rosor/')
-                +lightboxlink('rosvirgin2.jpg',     project.id, 18, 'Rosa Virgina',     'utsproj/rosor/')
-                +lightboxlink('waldrem2.jpg',       project.id, 19, 'Wallanders Dröm',  'utsproj/rosor/')
+            .d-flex.flex-sm-wrap.flex-column.flex-sm-row.justify-content-evenly.align-items-center
+              +lightboxlink('amoros2.jpg',     'amorosa.jpg', 'Amorosa',  'utsproj/rosor/')
+              +lightboxlink('barblik2.jpg',    'barbarlik.jpg', 'Barbara Liksom',  'utsproj/rosor/')
+              +lightboxlink('beckask2.jpg',    'beckoaska.jpg', 'Beck & Aska',  'utsproj/rosor/')
+              +lightboxlink('mifigl2.jpg',     'miafigl.jpg', 'Mia Figlia', 'utsproj/rosor/')
+              +lightboxlink('minetros2.jpg',   'minetroset.jpg', 'Minetta Rosetta',     'utsproj/rosor/')
+              +lightboxlink('nattdrot2.jpg',   'nattdrottn.jpg', 'Nattens Drottning',   'utsproj/rosor/')
+              +lightboxlink('redros2.jpg',     'redros.jpg', 'Rosa Liksom',         'utsproj/rosor/')
+              +lightboxlink('rosaalba2.jpg',   'rosaalba.jpg', 'Rosa Alba',           'utsproj/rosor/')
+              +lightboxlink('rosabor2.jpg',     'rosabort.jpg', 'Rosa Bortom',        'utsproj/rosor/')
+              +lightboxlink('rosafor2.jpg',     'rosaforut.jpg', 'Rosa Förutom',       'utsproj/rosor/')
+              +lightboxlink('rosbarb2.jpg',     'rosbarb.jpg', 'Rose Barbara',       'utsproj/rosor/')
+              +lightboxlink('roscalpet2.jpg',   'roscalpet.jpg', 'Violetta Scalpetta', 'utsproj/rosor/')
+              +lightboxlink('roselect2.jpg',    'roselect.jpg', 'Rosa Electra',   'utsproj/rosor/')
+              +lightboxlink('roshit2.jpg',      'roshitom.jpg', 'Rosa Hitom',     'utsproj/rosor/')
+              +lightboxlink('rosros2.jpg',      'rosrosa.jpg', 'Rosa Rosa',      'utsproj/rosor/')
+              +lightboxlink('rosvelv2.jpg',     'rosvelvet.jpg', 'Rosa Velvet',    'utsproj/rosor/')
+              +lightboxlink('rosvendet2.jpg',    'rosvendett.jpg', 'Rosa Vendetta',    'utsproj/rosor/')
+              +lightboxlink('rosveron2.jpg',     'rosverona.jpg', 'Rosa Verona',      'utsproj/rosor/')
+              +lightboxlink('rosvirgin2.jpg',     'rosvirgina.jpg', 'Rosa Virgina',     'utsproj/rosor/')
+              +lightboxlink('waldrem2.jpg',       'wallandream.jpg', 'Wallanders Dröm',  'utsproj/rosor/')
             h3 Clowner
-            .row.py-2
-              .container.text-center(data-bs-target='#' + project.id + 'clownModal' data-bs-toggle='modal')
-                +lightboxlink('bal1typ2.jpg',  project.id + 'clown', 0, 'Balans 1', 'utsproj/clowner/')
-                +lightboxlink('balans22.jpg',  project.id + 'clown', 1, 'Balans 2', 'utsproj/clowner/')
-                +lightboxlink('balans32.jpg',  project.id + 'clown', 2, 'Balans 3', 'utsproj/clowner/')
-                +lightboxlink('balans42.jpg',  project.id + 'clown', 3, 'Balans 4', 'utsproj/clowner/')
-                +lightboxlink('balans52.jpg',  project.id + 'clown', 4, 'Balans 5', 'utsproj/clowner/')
-                +lightboxlink('balans62.jpg',  project.id + 'clown', 5, 'Balans 6', 'utsproj/clowner/')
+            .d-flex.flex-sm-wrap.flex-column.flex-sm-row.justify-content-evenly.align-items-center
+              +lightboxlink('bal1typ2.jpg',  'bal1typ.jpg', 'Balans 1', 'utsproj/clowner/')
+              +lightboxlink('balans22.jpg', 'balans22.jpg', 'Balans 2', 'utsproj/clowner/')
+              +lightboxlink('balans32.jpg',  'balans3.jpg', 'Balans 3', 'utsproj/clowner/')
+              +lightboxlink('balans42.jpg',  'balans4.jpg', 'Balans 4', 'utsproj/clowner/')
+              +lightboxlink('balans52.jpg',  'balans5.jpg', 'Balans 5', 'utsproj/clowner/')
+              +lightboxlink('balans62.jpg',  'balans6.jpg', 'Balans 6', 'utsproj/clowner/')
 
     div.modal.fade(id='imageModal' tabindex='-1' aria-labelledby='imageModal' aria-hidden='true')
-      .modal-dialog.modal-dialog-centered.modal-dialog
+      .modal-dialog.modal-dialog-centered.modal-dialog(data-bs-dismiss='modal' aria-label='Close')
         .modal-content
           .modal-body
 
