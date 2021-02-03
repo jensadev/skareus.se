@@ -1,6 +1,13 @@
 doctype html
 html(lang="sv")
   head
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-RZMXMC5GVE')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RZMXMC5GVE');
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     meta(name="Description" content="Personal web for Eva Skåreus. Köpmanholmen Fabriksträdgården Tvättstugan Konst")
