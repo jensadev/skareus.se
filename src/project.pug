@@ -32,9 +32,10 @@ block nav
           each link in links
             +navlink(link.href, link.text)
             if link.href == 'project.html'
-              ul.nav.flex-column#sidenav
-                each project in projects
-                  +subnavlink('#' + project.id, project.title, project.year)
+              li
+                ul.nav.flex-column#sidenav
+                  each project in projects
+                    +subnavlink('#' + project.id, project.title, project.year)
 
 block content
   main.col-md-8.main-border

@@ -5,7 +5,7 @@
   "main": " ",
   "scripts": {
     "css": "sass --watch src/stylesheets/main.scss:docs/stylesheets/main.css",
-    "html": "pug --watch  src -o docs"
+    "html": "pug -P --watch  src -o docs"
   },
   "repository": {
     "type": "git",
