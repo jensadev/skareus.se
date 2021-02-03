@@ -3,11 +3,10 @@ window.addEventListener('load', (event) => {
 
   const modal = document.querySelector('#imageModal');
     modal.addEventListener('show.bs.modal', function(ev) {
-      console.log(ev);
       const image = new Image();
       image.src = 'images/' + ev.relatedTarget.dataset.image;
 
-      const node = ev.target.childNodes[0].childNodes[0].childNodes[0];
+      const node = modal.querySelector('.modal-body');
 
       while (node.lastChild) {
         node.removeChild(node.lastChild);
