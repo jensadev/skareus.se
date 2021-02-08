@@ -1,1 +1,165 @@
-:root{--color-primary: 68, 140, 202;--color-primary-darker: 42, 100, 150;--color-dark: 33, 37, 41;--color-light: 248, 249, 250}html{scroll-behavior:smooth}body{background-color:rgb(var(--color-light));color:rgb(var(--color-dark));font-family:"News Cycle",sans-serif;font-feature-settings:"onum" 1}@supports(font-variant-numeric: oldstyle-nums){body{font-feature-settings:normal;font-variant-numeric:oldstyle-nums}}h1,h2,h3{color:rgb(var(--color-primary));font-family:"News Cycle",sans-serif;font-variant-numeric:lining-nums;font-weight:700;letter-spacing:.1rem}h2{color:rgb(var(--color-primary));font-size:1.6rem;font-family:"News Cycle",sans-serif}h3{font-size:1.4rem}.lead{font-family:"News Cycle",sans-serif;font-size:1.1rem}.display-4{font-size:2rem;line-height:1.1;letter-spacing:.1rem;font-weight:700}.display-4 small{font-size:1.4rem;color:rgba(var(--color-primary), 0.8)}a{color:rgb(var(--color-primary))}a:hover{color:rgb(var(--color-primary-darker))}a:focus{color:rgb(var(--color-primary))}.nav-item{line-height:1.2}.nav-item .active{text-decoration:underline}.navbar-custom{padding-left:0rem}.navbar-custom .nav-item{font-size:1.6rem;padding-left:0rem}.navbar-custom .nav-link{padding-left:0rem}.navbar-brand{font-size:2.6rem;font-weight:700;letter-spacing:.2rem}.navbar-brand a{text-decoration:none;color:rgb(var(--color-primary))}.navbar-brand a:hover{color:rgb(var(--color-primary-darker))}.nav-sub{font-size:1.1rem}#sidenav li{line-height:1}#sidenav .nav-link.active,#sidenav .nav-link:focus{text-decoration:underline}#sidenav time{letter-spacing:.08rem}.head{font-weight:700;letter-spacing:.1rem}.books ul{list-style:none;padding-left:0}.books li{border-bottom:1px solid rgb(var(--color-light));line-height:1.5rem}.books li:hover{background-color:rgba(var(--color-primary), 0.1)}.books strong{font-weight:700;color:rgba(var(--color-dark), 0.8)}.img-thumbnail{max-width:220px;min-width:120px;background-color:inherit;border:none;cursor:pointer}.btop{position:fixed;bottom:20px;right:20px}.modal-content{width:auto;cursor:pointer}/*# sourceMappingURL=main.css.map */
+:root {
+  --color-primary: 68, 140, 202;
+  --color-primary-darker: 42, 100, 150;
+  --color-dark: 33, 37, 41;
+  --color-light: 248, 249, 250;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--color-light));
+  color: rgb(var(--color-dark));
+  font-family: "News Cycle", sans-serif;
+  font-feature-settings: "onum" 1;
+}
+@supports (font-variant-numeric: oldstyle-nums) {
+  body {
+    font-feature-settings: normal;
+    font-variant-numeric: oldstyle-nums;
+  }
+}
+
+/* type */
+h1, h2, h3 {
+  color: rgb(var(--color-primary));
+  font-family: "News Cycle", sans-serif;
+  font-variant-numeric: lining-nums;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+h2 {
+  color: rgb(var(--color-primary));
+  font-size: 1.6rem;
+  font-family: "News Cycle", sans-serif;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+.lead {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.1rem;
+}
+
+.display-4 {
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+}
+.display-4 small {
+  font-size: 1.4rem;
+  color: rgba(var(--color-primary), 0.8);
+}
+
+/* links */
+a {
+  color: rgb(var(--color-primary));
+}
+a:hover {
+  color: rgb(var(--color-primary-darker));
+}
+a:focus {
+  color: rgb(var(--color-primary));
+}
+
+/* Nav */
+.nav-item {
+  line-height: 1.2;
+}
+.nav-item .active {
+  text-decoration: underline;
+}
+
+.navbar-custom {
+  padding-left: 0rem;
+}
+.navbar-custom .nav-item {
+  font-size: 1.6rem;
+  padding-left: 0rem;
+}
+.navbar-custom .nav-link {
+  padding-left: 0rem;
+}
+
+.navbar-brand {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+.navbar-brand a {
+  text-decoration: none;
+  color: rgb(var(--color-primary));
+}
+.navbar-brand a:hover {
+  color: rgb(var(--color-primary-darker));
+}
+
+.nav-sub {
+  font-size: 1.1rem;
+}
+
+#sidenav li {
+  line-height: 1;
+}
+#sidenav .nav-link.active, #sidenav .nav-link:focus {
+  text-decoration: underline;
+}
+#sidenav time {
+  letter-spacing: 0.08rem;
+}
+
+.head {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+/* main */
+.books ul {
+  list-style: none;
+  padding-left: 0;
+}
+.books li {
+  border-bottom: 1px solid rgb(var(--color-light));
+  line-height: 1.5rem;
+}
+.books li:hover {
+  background-color: rgba(var(--color-primary), 0.1);
+}
+.books strong {
+  font-weight: 700;
+  color: rgba(var(--color-dark), 0.8);
+}
+
+/* img */
+.img-thumbnail {
+  max-width: 220px;
+  min-width: 120px;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* footer */
+.btop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.modal-content {
+  width: auto;
+  cursor: pointer;
+}
+
+.modal-dialog {
+  max-width: 750px;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=main.css.map */
