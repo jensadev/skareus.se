@@ -31,7 +31,7 @@ block nav
                     +subnavlink('#' + item.id, item.title)
 
 block content
-  main.col-md-8.main-border
+  main#content.col-md-8.main-border
     h1.display-4.pb-3 CV Eva Skåreus
     each item in cv
       +section(item.title, item.id)

@@ -38,7 +38,7 @@ block nav
                     +subnavlink('#' + project.id, project.title, project.year)
 
 block content
-  main.col-md-8.main-border
+  main#content.col-md-8.main-border
     h1.display-4.pb-3 Utställningar och projekt
     each project in projects
       +section(project.title, project.id, project.year)
