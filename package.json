@@ -1,11 +1,9 @@
 {
   "name": "skareus.se",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Static page for skareus.se",
   "main": " ",
   "scripts": {
-    "css": "sass --watch src/stylesheets/main.scss:docs/stylesheets/main.css",
-    "html": "pug -P --watch  src -o docs"
   },
   "repository": {
     "type": "git",
@@ -15,8 +13,5 @@
   "bugs": {
     "url": "https://github.com/jensnti/skareus.se"
   },
-  "homepage": "https://skareus.se",
-  "dependencies": {
-    "jstransformer-markdown-it": "^2.1.0"
-  }
+  "homepage": "https://skareus.se"
 }
